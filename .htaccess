@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^([a-aA-Z0-9\-\_\/*])$ index.php?=$1
