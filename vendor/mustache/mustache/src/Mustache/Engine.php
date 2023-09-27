@@ -23,20 +23,18 @@
  */
 class Mustache_Engine
 {
-    const VERSION      = '2.14.2';
-    const SPEC_VERSION = '1.3.0';
+    const VERSION        = '2.14.2';
+    const SPEC_VERSION   = '1.2.2';
 
-    const PRAGMA_FILTERS       = 'FILTERS';
-    const PRAGMA_BLOCKS        = 'BLOCKS';
-    const PRAGMA_ANCHORED_DOT  = 'ANCHORED-DOT';
-    const PRAGMA_DYNAMIC_NAMES = 'DYNAMIC-NAMES';
+    const PRAGMA_FILTERS      = 'FILTERS';
+    const PRAGMA_BLOCKS       = 'BLOCKS';
+    const PRAGMA_ANCHORED_DOT = 'ANCHORED-DOT';
 
     // Known pragmas
     private static $knownPragmas = array(
-        self::PRAGMA_FILTERS       => true,
-        self::PRAGMA_BLOCKS        => true,
-        self::PRAGMA_ANCHORED_DOT  => true,
-        self::PRAGMA_DYNAMIC_NAMES => true,
+        self::PRAGMA_FILTERS      => true,
+        self::PRAGMA_BLOCKS       => true,
+        self::PRAGMA_ANCHORED_DOT => true,
     );
 
     // Template cache
