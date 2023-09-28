@@ -30,7 +30,7 @@ if($params[0] != ""){
     // Ici aucun paramètre n'est défini
 } */
 
-use Exceptions\RouteNotFoundException;
+/* use Exceptions\RouteNotFoundException;
 use Router\Router;
 
 require '../vendor/autoload.php';
@@ -50,4 +50,12 @@ try {
     echo $router->resolve($_SERVER['REQUEST_URI']);
 }catch (RouteNotFoundException $e) {
     echo $e->getMessage();      
-}
+} */
+
+
+use App\Router\Router2;
+
+require '../vendor/autoload.php';
+
+$router= new Router2();
+
