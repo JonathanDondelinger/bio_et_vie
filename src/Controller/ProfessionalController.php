@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-class ProfessionalController{
+class ProfessionalController {
     public function professional(){
         echo 'Test 2';
     }
