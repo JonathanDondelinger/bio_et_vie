@@ -4,6 +4,8 @@ Bio et Vie is a PHP 8.2 project
 
 The project is a catalog of organic certified professionals.
 
+installation run composer install inside the root directory.
+
 Code style:
 
 
