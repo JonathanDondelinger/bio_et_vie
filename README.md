@@ -6,6 +6,19 @@ The project is a catalog of organic certified professionals.
 
 installation run composer install inside the root directory.
 
+Create config.php file inside a config directory.
+
+```PHP
+<?php
+const DB_USER = '';
+const DB_PASSWORD = '';
+const DB_NAME = '';
+const DB_CHARSET = '';
+const DB_HOST = '';
+```
+
+
+
 Code style:
 
 
