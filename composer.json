@@ -4,10 +4,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "Router\\": "Router/",
-            "Exceptions\\": "Exceptions/"
-
+            "App\\": "src/"
         }
     }
 }

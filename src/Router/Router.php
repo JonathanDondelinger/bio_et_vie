@@ -1,27 +1,34 @@
 <?php
 
-namespace Router;
+namespace App\Router;
 
-use Exceptions\RouteNotFoundException;
+use App\Controller\IndexController;
+use App\Router\Routes;
 
-class Router
-{
-    private array $routes;
 
-    public function register(string $path, callable $action): void
+class Router {
+    private $routes;
+
+    public function __construct()
     {
-        $this->routes[$path] = $action;
+        $routes = new Routes();
+        $this->routes= $routes->routes;
+        $this->pathUrl();
     }
 
-    public function resolve(string $uri)
+    public function pathUrl()
     {
-        $path = explode('?', $uri)[0];
-        $action = $this->routes[$path] ?? null;
-
-        if(!is_callable($action)) {
-            throw new RouteNotFoundException();
+        $uri = $_SERVER['REQUEST_URI'];
+        foreach($this->routes as $routeName => $routeParameters ){
+            if($uri === $routeParameters['path']){
+                $controllerName = $routeParameters['controller'];
+                $functionName = $routeParameters['function'];
+                require dirname(__DIR__) . '/Controller/' . $controllerName . '.php';
+                $controllerPath = 'App\\Controller\\' . $controllerName;
+                $controller = new $controllerPath();
+                $controller->{$functionName}();
+                break;
+            }
         }
-
-        return $action();
     }
 }
