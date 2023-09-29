@@ -10,8 +10,8 @@ class IndexController extends BaseController{
         $model = new IndexModel();
 
         $professionals = $model->findProfessional();
-            
-    
+                
+        
         echo $this->mustache->render('index', [
             'professionals' => $professionals
         ]);

@@ -9,23 +9,30 @@ class Routes {
             'function' => 'index',
             'path' => '/'
         ],
+        
         'professional' => [
             'controller' => 'ProfessionalController',
             'function' => 'professional',
             'path' => '/professionnel'
         ],
+
         'contact' => [
             'controller' => 'ContactController',
             'function' => 'contact',
             'path' => '/contact'
         ],
+
         'admin' => [
             'controller' => 'AdminController',
             'function' => 'admin',
             'path' => '/administration'
-        ]
-        
+        ],
 
+        'login' => [
+            'controller' => 'LoginController',
+            'function' => 'login',
+            'path' => '/connection'
+        ]
     ];
 
 }
