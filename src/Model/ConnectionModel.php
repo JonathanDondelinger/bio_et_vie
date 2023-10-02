@@ -4,7 +4,7 @@ namespace App\Model;
 
 use \PDO;
 
-class LoginModel extends BaseModel{
+class ConnectionModel extends BaseModel{
 
     public function getUser($email){
         $query = "SELECT * FROM user WHERE email = :email";

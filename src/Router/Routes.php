@@ -22,15 +22,15 @@ class Routes {
             'path' => '/contact'
         ],
 
-        'admin' => [
-            'controller' => 'AdminController',
-            'function' => 'admin',
-            'path' => '/administration'
+        'backOffice' => [
+            'controller' => 'BackOfficeController',
+            'function' => 'backOffice',
+            'path' => '/backOffice'
         ],
 
         'connection' => [
-            'controller' => 'LoginController',
-            'function' => 'login',
+            'controller' => 'ConnectionController',
+            'function' => 'connection',
             'path' => '/connection'
         ]
     ];

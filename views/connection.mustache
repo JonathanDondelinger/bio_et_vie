@@ -9,6 +9,11 @@
     <h1>Conexion</h1>
     <div class="">
     <div class="">
+    <ul>
+    {{#errors}}
+    <li>{{.}}</li>
+    {{/errors}}
+    </ul>
         <form method="post" action="/connection">
             <div>
                 <label for="email">Email</label>
