@@ -28,7 +28,7 @@ class Routes {
             'path' => '/administration'
         ],
 
-        'login' => [
+        'connection' => [
             'controller' => 'LoginController',
             'function' => 'login',
             'path' => '/connection'

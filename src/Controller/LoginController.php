@@ -2,25 +2,34 @@
 
 namespace App\Controller;
 
-use App\Model\AdminModel;
+use App\Model\LoginModel;
 
 class LoginController extends BaseController
 {
     public function login()
     {
-        if (isset($_POST['email']) && isset($_POST['password']) ){
+
+        $user = null;
+
+        if (isset($_POST['email'], $_POST['password']) ){
 
             $email = $_POST['email'];
-            
+            $password = $_POST['password'];
 
-            $model = new AdminModel();
+            $model = new LoginModel();
 
-            $login = $model->getAdmin($email);
+            $user = $model->getUser($email);
 
-            
-            echo $this->mustache->render('login', [
-                'login' => $login
-            ]);
-        }    
+            session_start();
+            $_SESSION['user'] = [
+                "id" => $user[""]
+            ];
+
+            header("location: /administration");
+
+        }   
+        echo $this->mustache->render('connection', [
+            'user' => $user
+        ]); 
     }
 }
