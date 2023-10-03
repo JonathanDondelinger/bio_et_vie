@@ -32,6 +32,12 @@ class Routes {
             'controller' => 'ConnectionController',
             'function' => 'connection',
             'path' => '/connection'
+        ],
+
+        'CreatePro' => [
+            'controller' => 'CreateProController',
+            'function' => 'createPro',
+            'path' => '/ajoutpro'
         ]
     ];
 
