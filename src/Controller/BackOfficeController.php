@@ -9,11 +9,11 @@ class BackOfficeController extends BaseController{
         
         $model = new BackOfficeModel();
 
-    
+        $contact = $model->getMessage();
         
         
         echo $this->mustache->render('backOffice', [
-            'model' => $model
+            'contact' => $contact
         ]);
     }
 }

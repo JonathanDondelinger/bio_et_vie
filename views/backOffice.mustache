@@ -8,19 +8,29 @@
 <body>
     <h1>TEST</h1>
     <section>
+        
         <thead>
             <tr>
-                <th>Sujet</th>
-                <th>Message</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>E-mail</th>
+                <th>Téléphone</th>
+                <th>Sujet</th>
+                <th>Message</th>      
             </tr>
         </thead>
+        {{#contact}}
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
+                <td>{{last_name}}</td>
+                <td>{{first_name}}</td>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+                <td>{{subject}}</td>
+                <td>{{message}}</td>
             </tr>
         </tbody>
+        {{/contact}}
     </section>
     <section>
         <thead>

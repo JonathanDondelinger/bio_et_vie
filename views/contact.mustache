@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CONTACTEZ-NOUS</h1>
+    <div class="">
+    <div class="">
+    <ul>
+    {{#errors}}
+    <li>{{.}}</li>
+    {{/errors}}
+    </ul>
+        <form method="post" action="/contact">
+            <div>
+                <label for="last_name"></label>
+                <input type="text" name="last_name" placeholder="Nom">
+            </div><div>
+                <label for="first_name"></label>
+                <input type="text" name="first_name" placeholder="Prénom">
+            </div>
+            <div>
+                <label for="email"></label>
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div>
+                <label for="phone"></label>
+                <input type="tel" name="phone" placeholder="Téléphone">
+            </div>
+            <div>
+                <label for="subject"></label>
+                <input type="text" name="subject" placeholder="Sujet du message">
+            </div>
+            <div>
+                <label for="message"></label>
+                <input type="text" name="message" placeholder="Message">
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</div>
+    
+</body>
+</html>
