@@ -2,7 +2,7 @@
 
 namespace App\Router;
 
-use App\Controller\IndexController;
+
 use App\Router\Routes;
 
 
@@ -30,7 +30,7 @@ class Router {
                 return;
             }
         }
-        echo '404'; 
+        echo '404';
         http_response_code(404);
     }
 }

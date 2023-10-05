@@ -7,7 +7,7 @@ use FTP\Connection;
 
 class ConnectionController extends BaseController
 {
-    public function Connection()
+    public function connection()
     {
 
         $user = [];
