@@ -48,3 +48,91 @@ nav a{
 
                                       /* INDEX */
 
+                                      /* SECTION 1 */
+.section1{
+    background-image: url("../images/bandeau-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section1 h1{
+    font-size: 10em;
+    color: white;
+    padding:10% 0% 0% 15%;
+}
+.section1 p{
+    font-size: 3em;
+    color: white;
+    padding:0% 0% 15% 15%;
+    
+    
+}
+
+                                   /* SECTION 2 */
+
+.section2{
+    display: flex;
+    justify-content: center;
+}
+.containerinfo{
+    width: 70%;
+    height: 395px;
+    display: flex;
+    position: relative;
+    top:-200px;
+    margin:0% 15%;
+}
+.leftinfo{
+    width: 80%;
+    background-image: url("../images/infos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rightinfo{
+    width: 400px;
+    background-color: #202328;
+    padding:50px;
+    justify-content: center;
+    color:#9DF9E8;
+    font-size: 1.2em;
+    text-align: center;
+}
+                                    /* SECTION 3 */
+
+
+.containerpresentation{
+    width: 70%;
+    height: 500px;
+    display: flex;
+    margin:0% 15%;
+} 
+
+.imgpresentation{
+    background-image: url("../images/presentation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55%;
+}
+
+.presentation{
+    width: 45%;
+    text-align: left;
+    font-size: 1.8em;
+    padding: 5%;
+}
+                                /* SECTION 4 */
+
+.containertri{
+    display: flex;
+    
+    width: 70%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.tri{
+    width: 300px;
+    height: 200px;
+    background-color: #202328;
+}
