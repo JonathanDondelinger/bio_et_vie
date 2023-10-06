@@ -60,7 +60,7 @@ class AddProController extends BaseController{
             }
             
         }
-        echo $this->mustache->render('AddPro', [
+        echo $this->mustache->render('AddProfessional', [
             'professional' => $professional,
             'errors' => $errors
         ]);

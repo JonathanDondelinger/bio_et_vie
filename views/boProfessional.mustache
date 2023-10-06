@@ -10,26 +10,32 @@
 <table>
     <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>      
+            <th>Raison Sociale</th>
+            <th>Siret</th>
+            <th>Numero Bio</th>
+            <th>Telephone</th>
+            <th>E-mail</th>
+            <th>Gerant</th>
+            <th>Telephone Commerciale</th>
+            <th>Sites Web</th>
+            <th>Action</th>    
         </tr>
     </thead>
     <tbody>
-        {{#}}
+        {{#professionals}}
             <tr>
-                <td>{{}}</td>
-                <td>{{}}</td>
-                <td>{{}}</td>
-                <td>{{}}</td>
-                <td>{{}}</td>
-                <td>{{}}</td>
+                <td>{{raisonSociale}}</td>
+                <td>{{siret}}</td>
+                <td>{{numeroBio}}</td>
+                <td>{{telephone}}</td>
+                <td>{{email}}</td>
+                <td>{{gerant}}</td>
+                <td>{{telephoneCommerciale}}</td>
+                <td>{{sitesWeb}}</td>
             </tr>
-        {{/}}    
+        {{/professionals}}    
     </tbody>
 </table>
+<a href="addProfessional">AJOUTER</a>
 </body>
 </html>

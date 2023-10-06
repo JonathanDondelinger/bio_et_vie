@@ -1,1 +1,28 @@
 {{>header}}
+
+<body>
+    <a href="backOffice">Retour</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Password</th>
+            <th>E-mail</th>
+            <th>Role</th>
+            <th>Action</th>  
+        </tr>
+    </thead>
+    <tbody>
+        {{#user}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{password}}</td>
+                <td>{{email}}</td>
+                <td>{{}}</td>
+                <td><a href="">Supprimer</a>
+            </tr>
+        {{/user}}    
+    </tbody>
+</table>
+<a href="addUser">AJOUTER</a>
+</body>
