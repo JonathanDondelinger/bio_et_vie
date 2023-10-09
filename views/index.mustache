@@ -11,10 +11,10 @@
         <div class="leftinfo">
         </div>
         <div class="rightinfo">
-        <img src="/images/icon-ble.png" alt="">
+        <img src="/images/icons/icon-ble.png" alt="">
         <p>415</p>
         <P>professionnels</p>
-        <img src="/images/icon-france.png" alt="">
+        <img src="/images/icons/icon-france.png" alt="">
         <p>Dans la France entière</p>
         </div>
     </div>
@@ -31,40 +31,53 @@
 <section class="section4">
     <div class="containertri">
         <div class="tri">
-            <div></div>
+            <img src="/images/icons/icon-vente-directe.png" alt="">
+            <div class="logo">
+            </div>
             <p>VENTE DIRECT</p>
         </div>
         <div class="tri">
-            <div></div>
+            <div class="logo">
+            <img src="/images/icons/icon-grossiste.png" alt="">
+            </div>
             <p>GROSSISTE</p>
         </div>
         <div class="tri">
-            <div></div>
-            <p>GRANDE ET MOYENNE SURFACE</p>
+            <div class="logo">
+            <img src="/images/icons/icon-grande-et-moyenne-surface.png" alt="">
+            </div>
+            <p>GRANDE ET <br> MOYENNE SURFACE</p>
         </div>
         <div class="tri">
-            <div></div>
+            <div class="logo">
+            <img src="/images/icons/icon-magasin-specialise.png" alt="">
+            </div>
             <p>MAGASIN SPÉCIALISÉ</p>
         </div>
         <div class="tri">
-            <div></div>
+            <div class="logo">
+            <img src="/images/icons/icon-artisan-commercant.png" alt="">
+            </div>
             <p>ARTISAN / COMMERÇANT</p>
         </div>
         <div class="tri">
-            <div></div>
+            <div class="logo">
+            <img src="/images/icons/icon-restaurant.png" alt="">
+            </div>
             <p>RESTAURANT</p>
         </div>
     </div>
 
 </section>
-
+<section>
     <h2>LES PROFESSIONNELS</h2>
-    {{#professionals}}
-    <p>{{raisonSociale}}</p>
-    <p>{{gerant}}</p>
-    <p>{{telephone}}</p>
-
+    <div class="card">
+        {{#professionals}}
+        <p>{{raisonSociale}}</p>
+        <p>{{gerant}}</p>
+        <p>{{telephone}}</p>
+    </div>
     {{/professionals}}
-
+</section>
 
     {{>footer}}

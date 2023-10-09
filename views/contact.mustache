@@ -1,43 +1,61 @@
     {{>header}}
     
     {{>navbar}}
-
-    <h1>CONTACTEZ-NOUS</h1>
-    <div class="">
-    <div class="">
-    <ul>
-    {{#errors}}
-    <li>{{.}}</li>
-    {{/errors}}
-    </ul>
-        <form method="post" action="/contact">
-            <div>
-                <label for="last_name"></label>
-                <input type="text" name="last_name" placeholder="Nom">
-            </div><div>
-                <label for="first_name"></label>
-                <input type="text" name="first_name" placeholder="Prénom">
-            </div>
-            <div>
-                <label for="email"></label>
-                <input type="email" name="email" placeholder="Email">
-            </div>
-            <div>
-                <label for="phone"></label>
-                <input type="tel" name="phone" placeholder="Téléphone">
-            </div>
-            <div>
-                <label for="subject"></label>
-                <input type="text" name="subject" placeholder="Sujet du message">
-            </div>
-            <div>
-                <label for="message"></label>
-                <input type="text" name="message" placeholder="Message">
-            </div>
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
-</div>
+<div id="contact">
     
-</body>
-</html>
+    <div class="containerform">
+        <div class="">
+        <h2>CONTACTEZ-NOUS</h2>
+        <ul>
+        {{#errors}}
+        <li>{{.}}</li>
+        {{/errors}}
+        </ul>
+            <form method="post" action="/contact">
+                <div class="form" id="form1">
+                    <div>
+                        <label for="last_name"></label>
+                        <input type="text" name="last_name"  placeholder="Nom">
+                    </div>
+                    <div>
+                        <label for="first_name"></label>
+                        <input type="text" name="first_name" placeholder="Prénom">
+                    </div>
+                </div>
+                <div class="form" id="form2">
+                    <div>
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <label for="phone"></label>
+                        <input type="tel" name="phone" placeholder="Téléphone">
+                    </div>
+                </div>
+                <div class="form">
+                    <label for="subject"></label>
+                    <input type="text" name="subject" placeholder="Sujet du message">
+                </div>
+                <div class="form" id="form3">
+                    <label for="message"></label>
+                    <input type="text" name="message" placeholder="Message">
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <div class="containercontact">
+        <div class="info">
+            <h3>NOS INFORMATIONS</h3>
+            <ul>
+                <li>contact@bio-et-vie.fr</li>
+                <li>04 75 25 53 00</li>
+                <li>06 68 54 78 00</li>
+            </ul>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.7310697819034!2d3.161484076813955!3d47.00625322924074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f04f5042bdd917%3A0xd482df0bb3e95869!2s27%20Rue%20de%20Barcelone%2C%2058000%20Nevers!5e0!3m2!1sfr!2sfr!4v1696844314869!5m2!1sfr!2sfr" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>    
+</div>
+{{>footer}}

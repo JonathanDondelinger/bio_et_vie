@@ -5,7 +5,7 @@ namespace App\Controller;
 class ProfessionalController extends BaseController {
     public function professional(){
        
-        echo 'Test 2';
+        
     
     
 
