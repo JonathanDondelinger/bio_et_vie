@@ -6,7 +6,7 @@ use \PDO;
 
 class AddProModel extends BaseModel{
 
-    public function addPro($id_api, $raisonSociale, $denominationcourante, $siret, $numeroBio, $telephone, $email, $codeNAF, $gerant, $dateMaj, $telephoneCommerciale, $reseau, $siteWeb, $adressesOperateurs, $productions, $certificats, $mixite, $Professionalcol){
+    public function addPro($id_api, $raisonSociale, $denominationcourante, $siret, $numeroBio, $telephone, $email, $codeNAF, $gerant, $dateMaj, $telephoneCommerciale, $reseau, $sitesWeb, $adressesOperateurs, $productions, $certificats, $mixite, $Professionalcol){
         $query = "INSERT INTO professionnal (id_api, raisonSociale, denominationcourante, siret, numeroBio, telephone, email, codeNAF, gerant, dateMaj, telephoneCommerciale, reseau, sitesWeb, adressesOperateurs, productions, certificats, mixite, Professionalcol) 
                   VALUES (:id_api, :raisonSociale, :denominationcourante, :siret, :numeroBio, :telephone, :email, :codeNAF, :gerant, :dateMaj, :telephoneCommerciale, :reseau, :sitesWeb, :adressesOperateurs, :productions, :certificats, :mixite, :Professionalcol)";
         $statment = $this->pdo->prepare($query);
@@ -22,7 +22,7 @@ class AddProModel extends BaseModel{
         $statment->bindValue(":dateMaj", $dateMaj, PDO::PARAM_STR);
         $statment->bindValue(":telephoneCommerciale", $telephoneCommerciale, PDO::PARAM_STR);
         $statment->bindValue(":reseau", $reseau, PDO::PARAM_STR);
-        $statment->bindValue(":sitesWeb", $siteWeb, PDO::PARAM_STR);
+        $statment->bindValue(":sitesWeb", $sitesWeb, PDO::PARAM_STR);
         $statment->bindValue(":adressesOperateurs", $adressesOperateurs, PDO::PARAM_STR);
         $statment->bindValue(":productions", $productions, PDO::PARAM_STR);
         $statment->bindValue(":certificats", $certificats, PDO::PARAM_STR);

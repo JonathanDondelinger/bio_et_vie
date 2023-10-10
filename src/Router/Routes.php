@@ -2,6 +2,8 @@
 
 namespace App\Router;
 
+use App\Controller\ApiController;
+
 class Routes {
     public $routes = [
         'index' => [
@@ -64,7 +66,11 @@ class Routes {
             'function' => 'boContact',
             'path' => '/boContact'
         ],
-        
+        'api' => [
+            'controller' => 'ApiController',
+            'function' => 'fetchApi',
+            'path' => '/test'
+        ]
 
     ];
 
