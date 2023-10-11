@@ -13,9 +13,9 @@ class BoUserModel extends BaseModel{
     }
     public function getUser(){
         $query = "SELECT * FROM user";
-        $statment = $this->pdo->prepare($query);
-        $statment->execute();
-        $result = $statment->fetchAll(PDO::FETCH_ASSOC);
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
     
