@@ -23,16 +23,16 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':codeNAF', $codeNAF);
         $statement->bindParam(':reseau', $reseau);
         $statement->bindParam(':adressesOperateurs', $adressesOperateurs);
-        $statement->bindParam(':sitesWeb', $sitesWeb);
-        
+        $statement->bindParam(':sitesWeb', $sitesWeb);   
         $statement->bindParam(':productions', $productions);
         $statement->bindParam(':certificats', $certificats);
         $statement->bindParam(':mixite', $mixite);
-        
         $statement->execute();
+        
     }
-
+   
     public function findActivity($id_api){
+
         $query = "SELECT id_api FROM activity WHERE id_api = :id_api";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_api', $id_api);
@@ -41,7 +41,7 @@ class ApiModel extends BaseModel {
         return $activity;
     }
 
-    public function addActivity($id_api, $nom){
+    public function addActivity( $id_api, $nom){
 
         $query = "INSERT INTO activity (id_api, nom) VALUES (:id_api, :nom)";
         $statement = $this->pdo->prepare($query);
@@ -50,9 +50,40 @@ class ApiModel extends BaseModel {
         $statement->execute();
     }
 
-    
+    public function proActivity($professional_id, $activity_id){
 
-    public function addCategory(){
-
+        $query = "INSERT INTO professional_activity (professional_id, activity_id) VALUES (:professional_id, :activity_id)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':professional_id', $professional_id);
+        $statement->bindParam(':activity_id', $activity_id);
+        $statement->execute();
     }
+    
+    public function findCategory($id_api){
+
+        $query = "SELECT id_api FROM category WHERE id_api = :id_api";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':id_api', $id_api);
+        $statement->execute();
+        $category = $statement->fetch(PDO::FETCH_ASSOC);
+        return $category;
+    }
+
+    public function addCategory($id_api, $nom){
+        $query = "INSERT INTO category (id_api, nom) VALUES (:id_api, :nom)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':id_api', $id_api);
+        $statement->bindParam(':nom', $nom);
+        $statement->execute();
+    }
+
+    public function proCategory($professional_id, $activity_id){
+
+        $query = "INSERT INTO professional_activity (professional_id, activity_id) VALUES (:professional_id, :activity_id)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':professional_id', $professional_id);
+        $statement->bindParam(':activity_id', $activity_id);
+        $statement->execute();
+    }
+
 }

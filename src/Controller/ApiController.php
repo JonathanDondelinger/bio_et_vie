@@ -13,7 +13,7 @@ class ApiController extends BaseController
         $model = new ApiModel();
 
         $baseUrl = "https://opendata.agencebio.org/api/gouv/operateurs";
-        $nb = 2;
+        $nb = 1;
 
         $curl = curl_init($baseUrl);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -27,7 +27,7 @@ class ApiController extends BaseController
 
         $calls = ceil($nbTotal / $nb);
 
-        $calls = 2;
+        $calls = 20;
 
         for ($debut = 0; $debut < $calls; $debut++) {
 
@@ -44,34 +44,62 @@ class ApiController extends BaseController
 
             foreach ($items as $item) {
 
-                $adressesOperateurs = $item['adressesOperateurs'];
-                $string = json_encode($adressesOperateurs);
+                $categories = $item->categories;
 
-                $sitesWeb = $item['sitesWeb'];
-                $string2 = json_encode($sitesWeb);
+                $sitesWeb = $item->siteWebs;
+                $string1 = json_encode($sitesWeb);
 
-                $activites = $item['activites'];
+                $adressesOperateurs = $item->adressesOperateurs;
+                $string2 = json_encode($adressesOperateurs);
+
+                $production = $item->productions;
+                $string3 = json_encode($production);
+
+                $activites = $item->activites;
                 
-                $production = $item['productions'];
-                $string4 = json_encode($production);
+                $certificats = $item->certificats;
+                $string4 = json_encode($certificats);
 
-                $certificats = $item['certificats'];
-                $string5 = json_encode($certificats);
+                $mixite = $item->mixite;
+                $string5 = json_encode($mixite);
+               
 
-                $mixite = $item['mixite'];
-                $string6 = json_encode($mixite);
-
-                $model->addapi($item['id'], $item['raisonSociale'], $item['denominationcourante'], $item['siret'], $item['numeroBio'], $item['gerant'], $item['telephone'], $item['telephoneCommerciale'], $item['email'], $item['dateMaj'], $item['codeNAF'], $item['reseau'], $string, $string2, $string4, $string5, $string6);
+                $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5);
 
                 foreach($activites as $activite){
-                    $activity = $model->findActivity($activite['id']);
-                    if(!empty($activity)){
-                        $model->addActivity($activite['id'], $activite['nom']);
+                    
+                    $activity = $model->findActivity($activite->id, $activite->nom);
 
+                    if(empty($activity)){
+                        $id_api = $activite->id;
+                        $nom = $activite->nom;
+                        $model->addActivity($id_api, $nom); 
                     }
-                    // todo: gérer la table de jointure 
+
+                   
+                    
+                    // todo: gérer la table de jointure
+                   
                 }
                 // todo créer foreach category 
+                foreach($categories as $categorie){
+
+                    $category = $model->findCategory($categorie->id, $categorie->nom);
+
+                    if(empty($category)){
+                        
+                        $id_api = $categorie->id;
+                        $nom = $categorie->nom;
+                        $model->addCategory($id_api, $nom);
+                    }
+
+                    /* if(!empty($category)){
+                        $category_id = $categorie['id'];
+                        $professional_id = $item['id'];
+                        $model->proCategory($professional_id, $category_id);
+                    }
+  */
+                }
             }
         }
 
