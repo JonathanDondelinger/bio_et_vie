@@ -27,6 +27,7 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':productions', $productions);
         $statement->bindParam(':certificats', $certificats);
         $statement->bindParam(':mixite', $mixite);
+        
         $statement->execute();
         return $this->pdo->lastInsertId();
     }

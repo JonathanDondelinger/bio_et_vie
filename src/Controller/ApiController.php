@@ -27,7 +27,9 @@ class ApiController extends BaseController
 
         $calls = ceil($nbTotal / $nb);
 
-        $calls = 5;
+        
+        $successfulApiCalls = 0;
+
 
         for ($debut = 0; $debut < $calls * $nb; $debut += $nb) {
 
@@ -38,6 +40,15 @@ class ApiController extends BaseController
             $data = curl_exec($curl);
 
             $data = json_decode($data);
+
+            curl_close($curl);
+
+            $successfulApiCalls++;
+
+            if($successfulApiCalls > 48){
+                sleep(1);
+               $successfulApiCalls = 0; 
+            }
 
             $items = $data->items;
 
@@ -78,11 +89,10 @@ class ApiController extends BaseController
                         $activity_id = $activity['id'];
                       
                     }
-                    // table de jointure 
+                    // table de jointure activity
                     $model->proActivity($professionalId, $activity_id);
                    
-                }
-                // todo créer foreach category 
+                } 
                 foreach($categories as $categorie){
 
                     $category = $model->findCategory($categorie->id, $categorie->nom);
@@ -95,7 +105,7 @@ class ApiController extends BaseController
                     }else{
                         $category_id = $category['id'];
                     }
-
+                    // table de jointure category
                     $model->proCategory($professionalId, $category_id);
              
  
