@@ -28,12 +28,12 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':certificats', $certificats);
         $statement->bindParam(':mixite', $mixite);
         $statement->execute();
-        
+        return $this->pdo->lastInsertId();
     }
    
     public function findActivity($id_api){
 
-        $query = "SELECT id_api FROM activity WHERE id_api = :id_api";
+        $query = "SELECT id, id_api FROM activity WHERE id_api = :id_api";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_api', $id_api);
         $statement->execute();
@@ -48,6 +48,7 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':id_api', $id_api);
         $statement->bindParam(':nom', $nom);
         $statement->execute();
+        return $this->pdo->lastInsertId();
     }
 
     public function proActivity($professional_id, $activity_id){
@@ -61,7 +62,7 @@ class ApiModel extends BaseModel {
     
     public function findCategory($id_api){
 
-        $query = "SELECT id_api FROM category WHERE id_api = :id_api";
+        $query = "SELECT id, id_api FROM category WHERE id_api = :id_api";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_api', $id_api);
         $statement->execute();
@@ -75,15 +76,17 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':id_api', $id_api);
         $statement->bindParam(':nom', $nom);
         $statement->execute();
+        return $this->pdo->lastInsertId();
     }
 
-    public function proCategory($professional_id, $activity_id){
+    public function proCategory($professional_id, $category_id){
 
-        $query = "INSERT INTO professional_activity (professional_id, activity_id) VALUES (:professional_id, :activity_id)";
+        $query = "INSERT INTO professional_category (professional_id, category_id) VALUES (:professional_id, :category_id)";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':professional_id', $professional_id);
-        $statement->bindParam(':activity_id', $activity_id);
+        $statement->bindParam(':category_id', $category_id);
         $statement->execute();
+        
     }
 
 }

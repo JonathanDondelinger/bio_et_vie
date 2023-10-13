@@ -69,16 +69,18 @@
     </div>
 
 </section>
-<section>
+<section class="section5">
     <h2>LES PROFESSIONNELS</h2>
-    {{#professionals}}
-    <div class="card">
-        
-        <p>{{raisonSociale}}</p>
-        <p>{{gerant}}</p>
-        <p>{{telephone}}</p>
+    <div class="containercard">
+        {{#professionals}}
+        <div class="card">
+            
+            <p>{{raisonSociale}}</p>
+            <p>{{gerant}}</p>
+            <p>{{telephone}}</p>
+        </div>
+        {{/professionals}}
     </div>
-    {{/professionals}}
 </section>
 
     {{>footer}}

@@ -13,7 +13,7 @@ class ApiController extends BaseController
         $model = new ApiModel();
 
         $baseUrl = "https://opendata.agencebio.org/api/gouv/operateurs";
-        $nb = 1;
+        $nb = 100;
 
         $curl = curl_init($baseUrl);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -27,9 +27,9 @@ class ApiController extends BaseController
 
         $calls = ceil($nbTotal / $nb);
 
-        $calls = 20;
+        $calls = 5;
 
-        for ($debut = 0; $debut < $calls; $debut++) {
+        for ($debut = 0; $debut < $calls * $nb; $debut += $nb) {
 
             $url = $baseUrl . '?debut=' . $debut . '&nb=' . $nb;
 
@@ -64,7 +64,7 @@ class ApiController extends BaseController
                 $string5 = json_encode($mixite);
                
 
-                $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5);
+                $professionalId = $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5);
 
                 foreach($activites as $activite){
                     
@@ -73,12 +73,13 @@ class ApiController extends BaseController
                     if(empty($activity)){
                         $id_api = $activite->id;
                         $nom = $activite->nom;
-                        $model->addActivity($id_api, $nom); 
+                        $activity_id = $model->addActivity($id_api, $nom); 
+                    }else{
+                        $activity_id = $activity['id'];
+                      
                     }
-
-                   
-                    
-                    // todo: gérer la table de jointure
+                    // table de jointure 
+                    $model->proActivity($professionalId, $activity_id);
                    
                 }
                 // todo créer foreach category 
@@ -90,15 +91,14 @@ class ApiController extends BaseController
                         
                         $id_api = $categorie->id;
                         $nom = $categorie->nom;
-                        $model->addCategory($id_api, $nom);
+                        $category_id = $model->addCategory($id_api, $nom);
+                    }else{
+                        $category_id = $category['id'];
                     }
 
-                    /* if(!empty($category)){
-                        $category_id = $categorie['id'];
-                        $professional_id = $item['id'];
-                        $model->proCategory($professional_id, $category_id);
-                    }
-  */
+                    $model->proCategory($professionalId, $category_id);
+             
+ 
                 }
             }
         }

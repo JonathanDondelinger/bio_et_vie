@@ -179,7 +179,10 @@ section{
     justify-items: center;
     margin: 0% 15% 5%;
 }
-
+.containercard{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
 .card{
     width: 300px;
     height: 400px;
