@@ -74,13 +74,28 @@
     <div class="containercard">
         {{#professionals}}
         <div class="card">
-            
             <p>{{raisonSociale}}</p>
             <p>{{gerant}}</p>
             <p>{{telephone}}</p>
         </div>
         {{/professionals}}
     </div>
+
+  <div class="pagination">
+    <ul>
+        <li>
+            <a href="">Précédent</a>
+        </li>
+        {{#pageNumbers}}
+        <li>
+            <a href="/{{pageNumber}}">{{pageNumber}}</a>
+        </li>
+        {{/pageNumbers}}
+        <li>
+            <a href="">Suivant</a>
+        </li>
+    </ul>
+</div>
 </section>
 
     {{>footer}}

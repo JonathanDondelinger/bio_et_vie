@@ -74,8 +74,9 @@ class ApiController extends BaseController
                 $mixite = $item->mixite;
                 $string5 = json_encode($mixite);
                
+                $api = $item->api = (1);
 
-                $professionalId = $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5);
+                $professionalId = $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5, $api);
 
                 foreach($activites as $activite){
                     

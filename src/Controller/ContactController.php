@@ -26,10 +26,11 @@ class ContactController extends BaseController{
                 $phone = strip_tags($_POST['phone']);
                 $subject = strip_tags($_POST['subject']);
                 $message = strip_tags($_POST['message']);
-
+                
                 $model = new ContactModel();
+                $read = 0;
 
-                $contact = $model->addContact($last_name, $first_name, $email, $phone, $subject, $message);
+                $contact = $model->addContact($last_name, $first_name, $email, $phone, $subject, $message, $read);
             }else{
                 $errors[] = 'test';
             };   

@@ -11,6 +11,12 @@ class Routes {
             'function' => 'index',
             'path' => '/'
         ],
+
+        'pagination' => [
+            'controller' => 'IndexController',
+            'function' => 'index',
+            'path' => '/{page}'
+        ],
         
         'professional' => [
             'controller' => 'ProfessionalController',

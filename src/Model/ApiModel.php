@@ -6,9 +6,9 @@ use \PDO;
 
 class ApiModel extends BaseModel {
 
-    public function addapi($id_api, $raisonSociale, $denominationcourante, $siret, $numeroBio, $telephone, $email, $codeNAF, $gerant, $dateMaj, $telephoneCommerciale, $reseau, $sitesWeb, $adressesOperateurs, $productions, $certificats, $mixite )
+    public function addapi($id_api, $raisonSociale, $denominationcourante, $siret, $numeroBio, $telephone, $email, $codeNAF, $gerant, $dateMaj, $telephoneCommerciale, $reseau, $sitesWeb, $adressesOperateurs, $productions, $certificats, $mixite, $api )
     {
-        $query = "INSERT INTO professional (id_api, raisonSociale, denominationcourante, siret, numeroBio, telephone, email, codeNAF, gerant, dateMaj, telephoneCommerciale, reseau, sitesWeb, adressesOperateurs, productions, certificats, mixite ) VALUES (:id_api, :raisonSociale, :denominationcourante, :siret, :numeroBio, :telephone, :email, :codeNAF, :gerant, :dateMaj, :telephoneCommerciale, :reseau, :sitesWeb, :adressesOperateurs, :productions, :certificats, :mixite )";
+        $query = "INSERT INTO professional (id_api, raisonSociale, denominationcourante, siret, numeroBio, telephone, email, codeNAF, gerant, dateMaj, telephoneCommerciale, reseau, sitesWeb, adressesOperateurs, productions, certificats, mixite, api ) VALUES (:id_api, :raisonSociale, :denominationcourante, :siret, :numeroBio, :telephone, :email, :codeNAF, :gerant, :dateMaj, :telephoneCommerciale, :reseau, :sitesWeb, :adressesOperateurs, :productions, :certificats, :mixite, :api )";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_api', $id_api);
         $statement->bindParam(':raisonSociale', $raisonSociale);
@@ -27,6 +27,7 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':productions', $productions);
         $statement->bindParam(':certificats', $certificats);
         $statement->bindParam(':mixite', $mixite);
+        $statement->bindParam(':api', $api);
         
         $statement->execute();
         return $this->pdo->lastInsertId();
