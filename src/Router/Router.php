@@ -19,6 +19,10 @@ class Router {
     public function pathUrl()
     {
         $uri = $_SERVER['REQUEST_URI'];
+        
+        $uriArray = explode('?', $uri);
+        $uri = $uriArray[0];
+
         foreach($this->routes as $routeName => $routeParameters ){
             if($uri === $routeParameters['path']){
                 $controllerName = $routeParameters['controller'];
@@ -30,8 +34,9 @@ class Router {
                 
                 return;
             }
+            
         }
-
+        
         echo '404';
         http_response_code(404);
     }

@@ -12,7 +12,7 @@
         </div>
         <div class="rightinfo">
         <img src="/images/icons/icon-ble.png" alt="">
-        <p>415</p>
+        <p>{{nbProfessional}}</p>
         <P>professionnels</p>
         <img src="/images/icons/icon-france.png" alt="">
         <p>Dans la France entière</p>
@@ -69,7 +69,7 @@
     </div>
 
 </section>
-<section class="section5">
+<section class="section5" id="Professionnels">
     <h2>LES PROFESSIONNELS</h2>
     <div class="containercard">
         {{#professionals}}
@@ -84,15 +84,15 @@
   <div class="pagination">
     <ul>
         <li>
-            <a href="">Précédent</a>
+            <a href="/?page={{previous}}#Professionnels">Précédent</a>
         </li>
         {{#pageNumbers}}
         <li>
-            <a href="/{{pageNumber}}">{{pageNumber}}</a>
+            <a href="/?page={{.}}#Professionnels">{{.}}</a>
         </li>
         {{/pageNumbers}}
         <li>
-            <a href="">Suivant</a>
+            <a href="/?page={{next}}#Professionnels">Suivant</a>
         </li>
     </ul>
 </div>

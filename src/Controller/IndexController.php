@@ -17,31 +17,56 @@ class IndexController extends BaseController{
             $currentPage = 1;
         };
         
-        $nbProfessional = (int) $pagination['nbProfessional'];
+        $nbProfessional = (int)$pagination['nbProfessional'];
 
         $professionalPerPage = 12;
 
         $pages = ceil($nbProfessional / $professionalPerPage);
 
-        var_dump($pages);
 
         $first = ($currentPage * $professionalPerPage) - $professionalPerPage;
 
         $professionals = $model->findProfessional($first, $professionalPerPage);
 
-        var_dump($first);
+       var_dump($nbProfessional);
 
         $pageNumbers = array();
-        for ($currentPage = 1; $currentPage <= $pages; $currentPage++) {
-            $pageNumbers[] = array('pageNumber' => $currentPage);
+        
+        if($pageMin = $pages - $pages + 1 ){
+            $pageNumbers[] = $pageMin;
+        }
+
+        for ($page = 2; $page <= $pages - 1; $page++ ) {
+            
+            if($page >= $currentPage - 6 && $page <= $currentPage + 6 ){
+                $pageNumbers[] = $page;   
+            }
+        }
+
+        if($pageMax = $pages ){
+            $pageNumbers[] = $pageMax;
         };
         
+        if($currentPage > $pageMin){
+            $previous = $currentPage - 1;
+        }else{
+            $previous = $pageMin;
+        }
+
+        if($currentPage < $pageMax){
+            $next = $currentPage + 1;
+        }else{
+            $next = $pageMax;
+        }
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
             'pages' => $pages,
             'currentPage' => $currentPage,
-            'pageNumbers' => $pageNumbers
+            'pageNumbers' => $pageNumbers,
+            'previous' => $previous,
+            'next' => $next,
+            'nbProfessional' => $nbProfessional
         ]);
     }
 }

@@ -8,7 +8,6 @@ h2{
 }
                        /* Nav Bar */
 
-
 nav{
     width: 100%;
     display: flex;
@@ -41,7 +40,6 @@ nav ul{
 a{
     text-decoration: none;
     font-size: 1.1em;
-    border-right: solid 1px;
     padding:0px 10px;
 }
 
@@ -192,6 +190,18 @@ section{
     align-items: center;
     justify-content: end;
     box-shadow: 0px 0px 5px gray;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    
+}
+.pagination ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    
+    padding-top: 20px;
 }
 
                                                         /* CONTACT */
