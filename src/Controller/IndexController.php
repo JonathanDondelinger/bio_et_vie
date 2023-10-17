@@ -28,8 +28,8 @@ class IndexController extends BaseController{
 
         $professionals = $model->findProfessional($first, $professionalPerPage);
 
-       var_dump($nbProfessional);
-
+        
+        
         $pageNumbers = array();
         
         if($pageMin = $pages - $pages + 1 ){

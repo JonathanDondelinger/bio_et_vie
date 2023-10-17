@@ -18,9 +18,9 @@ class IndexModel extends BaseModel{
         $pagination = $statement->fetch();
         return $pagination;
     }
-    public function findProfessional($first, $professionalPerPage){
-        $query = "SELECT * FROM professional LIMIT :first, :professionalPerPage";
-        $statement = $this->pdo->prepare($query);
+    public function findProfessional($first, $professionalPerPage, ){
+        $query = "SELECT * FROM professional LEFT JOIN professional_category ON professional.id = professional_category.professional_id LEFT JOIN category ON category.id = professional_category.category_id LIMIT :first, :professionalPerPage ";
+        $statement = $this->pdo->prepare($query);   
         $statement->bindValue(':first', $first, PDO::PARAM_INT);
         $statement->bindValue(':professionalPerPage', $professionalPerPage, PDO::PARAM_INT);
         $statement->execute();
