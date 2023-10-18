@@ -30,7 +30,7 @@
 </section>
 <section class="section4">
     <div class="containertri">
-        <a href="/?category={{category}}#Professionnels" class="tri">
+        <a href="/#Professionnels" class="tri">
             <div >
                 <img src="/images/icons/icon-vente-directe.png" alt="">
                 <div class="logo">
@@ -38,48 +38,66 @@
                 <p>VENTE DIRECT</p>
             </div>
         </a>
-        <div class="tri">
-            <div class="logo">
-            <img src="/images/icons/icon-grossiste.png" alt="">
+        <a href="/#Professionnels" class="tri">
+            <div>
+                <div class="logo">
+                <img src="/images/icons/icon-grossiste.png" alt="">
+                </div>
+                <p>GROSSISTE</p>
             </div>
-            <p>GROSSISTE</p>
-        </div>
-        <div class="tri">
-            <div class="logo">
-            <img src="/images/icons/icon-grande-et-moyenne-surface.png" alt="">
+        <a href="/#Professionnels" class="tri">
+            <div>
+                <div class="logo">
+                <img src="/images/icons/icon-grande-et-moyenne-surface.png" alt="">
+                </div>
+                <p>GRANDE ET <br> MOYENNE SURFACE</p>
             </div>
-            <p>GRANDE ET <br> MOYENNE SURFACE</p>
-        </div>
-        <div class="tri">
-            <div class="logo">
-            <img src="/images/icons/icon-magasin-specialise.png" alt="">
+        </a>
+        <a href="/#Professionnels" class="tri">
+            <div>
+                <div class="logo">
+                <img src="/images/icons/icon-magasin-specialise.png" alt="">
+                </div>
+                <p>MAGASIN SPÉCIALISÉ</p>
             </div>
-            <p>MAGASIN SPÉCIALISÉ</p>
-        </div>
-        <div class="tri">
-            <div class="logo">
-            <img src="/images/icons/icon-artisan-commercant.png" alt="">
+        </a>
+        <a href="/#Professionnels" class="tri">
+            <div>
+                <div class="logo">
+                <img src="/images/icons/icon-artisan-commercant.png" alt="">
+                </div>
+                <p>ARTISAN / COMMERÇANT</p>
             </div>
-            <p>ARTISAN / COMMERÇANT</p>
-        </div>
-        <div class="tri">
-            <div class="logo">
-            <img src="/images/icons/icon-restaurant.png" alt="">
+        </a>
+        <a href="/#Professionnels" class="tri">
+            <div>
+                <div class="logo">
+                <img src="/images/icons/icon-restaurant.png" alt="">
+                </div>
+                <p>RESTAURANT</p>
             </div>
-            <p>RESTAURANT</p>
-        </div>
+        </a>
     </div>
- 
+    <form method="POST" action="/">
+        <select name="categorie">
+            <option value="">Toutes les catégories</option>
+            <option value="ArtisanCommercant">Artisan / Commerçant</option>
+            <!-- Ajoutez d'autres options pour d'autres catégories -->
+        </select>
+        <button type="submit">Filtrer</button>
+    </form>
+    
 </section>
 <section class="section5" id="Professionnels">
     <h2>LES PROFESSIONNELS</h2>
     <div class="containercard">
+        
         {{#professionals}}
-        <div class="card">
-            <p>{{raisonSociale}}</p>
-            <p>{{gerant}}</p>
-            <p>{{telephone}}</p>
-        </div>
+            <div class="card">
+                <p>{{raisonSociale}}</p>
+                <p>{{gerant}}</p>
+                <p>{{telephone}}</p>
+            </div>
         {{/professionals}}
     </div>
 

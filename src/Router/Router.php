@@ -22,7 +22,7 @@ class Router {
         
         $uriArray = explode('?', $uri);
         $uri = $uriArray[0];
-
+        
         foreach($this->routes as $routeName => $routeParameters ){
             if($uri === $routeParameters['path']){
                 $controllerName = $routeParameters['controller'];
