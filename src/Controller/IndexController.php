@@ -80,12 +80,14 @@ class IndexController extends BaseController{
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
+            'categorie' => $categoryId,
             'pages' => $pages,
             'currentPage' => $currentPage,
             'pageNumbers' => $pageNumbers,
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional
+
         ]);
     }
 }
