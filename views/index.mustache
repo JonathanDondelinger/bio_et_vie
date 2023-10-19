@@ -30,7 +30,7 @@
 </section>
 <section class="section4">
     <div class="containertri">
-        <a href="/#Professionnels" class="tri">
+        <a href="/?categorie=3#Professionnels" class="tri">
             <div >
                 <img src="/images/icons/icon-vente-directe.png" alt="">
                 <div class="logo">
@@ -78,14 +78,6 @@
             </div>
         </a>
     </div>
-    <form method="POST" action="/">
-        <select name="categorie">
-            <option value="">Toutes les catégories</option>
-            <option value="ArtisanCommercant">Artisan / Commerçant</option>
-            <!-- Ajoutez d'autres options pour d'autres catégories -->
-        </select>
-        <button type="submit">Filtrer</button>
-    </form>
     
 </section>
 <section class="section5" id="Professionnels">
@@ -99,12 +91,13 @@
                 <p>{{telephone}}</p>
             </div>
         {{/professionals}}
+
     </div>
 
   <div class="pagination">
     <ul>
         <li>
-            <a href="/?page={{previous}}#Professionnels">Précédent</a>
+            <a href="/?page={{previous}}&categorie=#Professionnels">Précédent</a>
         </li>
         {{#pageNumbers}}
         <li>

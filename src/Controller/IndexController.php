@@ -9,7 +9,13 @@ class IndexController extends BaseController{
         
         $model = new IndexModel();
 
-        $pagination = $model->paginationProfessional();
+        $categoryId = 0;
+       
+        if(isset($_GET['categorie'])) {
+            $categoryId = (int)$_GET['categorie'];
+        }
+
+        $pagination = $model->paginationProfessional($categoryId);
 
         
 
@@ -28,11 +34,10 @@ class IndexController extends BaseController{
 
         $first = ($currentPage * $professionalPerPage) - $professionalPerPage;
    
-        if (isset($_POST['categorie'])) {
+        if ($categoryId > 0) {
             
-            $categorie = $_POST['categorie'];
+            $professionals = $model->findProfessional($first, $professionalPerPage, $categoryId); 
 
-            $professionals = $model->Category($first, $professionalPerPage, $categorie);
         } else {
            
             $professionals = $model->findProfessional($first, $professionalPerPage);
