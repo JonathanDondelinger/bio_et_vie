@@ -85,11 +85,13 @@
     <div class="containercard">
         
         {{#professionals}}
-            <div class="card">
-                <p>{{raisonSociale}}</p>
-                <p>{{gerant}}</p>
-                <p>{{telephone}}</p>
-            </div>
+            <a href="/professionnel/{{id}}">
+                <div class="card">
+                    <p>{{raisonSociale}}</p>
+                    <p>{{gerant}}</p>
+                    <p>{{telephone}}</p>
+                </div>
+            </a>
         {{/professionals}}
 
     </div>

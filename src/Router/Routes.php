@@ -15,7 +15,7 @@ class Routes {
         'professional' => [
             'controller' => 'ProfessionalController',
             'function' => 'professional',
-            'path' => '/professionnel'
+            'path' => '/professionnel/{id}'
         ],
 
         'contact' => [
@@ -66,11 +66,11 @@ class Routes {
             'function' => 'boContact',
             'path' => '/boContact'
         ],
-        'api' => [
+       /*  'api' => [
             'controller' => 'ApiController',
             'function' => 'fetchApi',
             'path' => '/test'
-        ]
+        ] */
 
     ];
 

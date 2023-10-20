@@ -17,8 +17,8 @@ class IndexController extends BaseController{
 
         $pagination = $model->paginationProfessional($categoryId);
 
-        
 
+        
         if(isset($_GET['page']) && !empty($_GET['page'])){
             $currentPage = (int)strip_tags($_GET['page']);
         }else{
@@ -41,13 +41,9 @@ class IndexController extends BaseController{
         } else {
            
             $professionals = $model->findProfessional($first, $professionalPerPage);
+        
         }
        
-        
-        $tableau = array();
-        
-        $tableau[] = $professionals;
-        
 
         $pageNumbers = array();
         
