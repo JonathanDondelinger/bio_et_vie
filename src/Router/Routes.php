@@ -17,7 +17,7 @@ class Routes {
             'function' => 'professional',
             'path' => '/professionnel/{id}'
         ],
-
+       
         'contact' => [
             'controller' => 'ContactController',
             'function' => 'contact',

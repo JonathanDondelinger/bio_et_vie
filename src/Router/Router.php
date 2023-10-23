@@ -28,35 +28,41 @@ class Router {
 
         foreach($this->routes as $routeName => $routeParameters ){
             $uriArray = explode('/', $uri);
-            
+            $routeArray = explode('/', $routeParameters['path']);
 
-            if(isset($routeParameters['path']) && isset($uriArray[2]) && preg_match('/\d{0,5}/', $uriArray[2])){
-                
-                $routeParameters['path'] = $uriArray[2];
-
-                $uri = $routeParameters['path'];
-
-                echo '<pre>';
-                var_dump($uri);
-                echo '</pre>';
-            }
-           
+            if(count($uriArray) !== count($routeArray)){
+                continue;
+            }            
             
-            
-            
-
+            $sameRoute = true;
+            $controllerFunctionParameters = array();
             // comparer chaque portion de $uri a $routeParameters['path']
+            for($i = 0; $i < count($uriArray); $i++){
+                
+                if($uriArray[$i] !== $routeArray[$i]){
+                    //reconaitre {id} est une variable
+                    if(preg_match('/\{(.*?)\}/', $routeArray[$i])){// faire comprendre que {id} est un parametre (regex) expression réguliere 
+                        //passer la variable en parametre de la fonction du controller
+                        $controllerFunctionParameters[] = $uriArray[$i];
+                        continue;
+                    }
+                    $sameRoute = false;
+                    break;
+                }
+            }
             
-            // faire comprendre que {id} est un parametre (regex) expression réguliere 
             
-            if($uri === $routeParameters['path']){ 
+            
+            
+            
+            if($sameRoute){ 
                 $controllerName = $routeParameters['controller'];
                 $functionName = $routeParameters['function'];
                 require dirname(__DIR__) . '/Controller/' . $controllerName . '.php';
                 $controllerPath = 'App\\Controller\\' . $controllerName;
                 $controller = new $controllerPath();
-                $controller->{$functionName}();    //ajouter parametre a l'appel de fonction
-                
+                /* $controller->{$functionName}(); */    //ajouter parametre a l'appel de fonction
+                call_user_func_array([$controller, $functionName],$controllerFunctionParameters);
                 return;
             }
             

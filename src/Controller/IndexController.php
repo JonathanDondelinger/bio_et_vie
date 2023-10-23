@@ -33,7 +33,9 @@ class IndexController extends BaseController{
 
 
         $first = ($currentPage * $professionalPerPage) - $professionalPerPage;
-   
+        
+        
+
         if ($categoryId > 0) {
             
             $professionals = $model->findProfessional($first, $professionalPerPage, $categoryId); 
@@ -43,8 +45,7 @@ class IndexController extends BaseController{
             $professionals = $model->findProfessional($first, $professionalPerPage);
         
         }
-       
-
+        
         $pageNumbers = array();
         
         if($pageMin = $pages - $pages + 1 ){

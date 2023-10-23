@@ -28,11 +28,12 @@ class IndexModel extends BaseModel{
     public function findProfessional($first, $professionalPerPage, $categoryId = 0){
         $query = "SELECT * FROM professional 
                   LEFT JOIN professional_category ON professional.id = professional_category.professional_id 
-                  LEFT JOIN category ON category.id = professional_category.category_id ";
+                  LEFT JOIN category ON category.id_category = professional_category.category_id ";
         if($categoryId > 0){
             $query .= "WHERE professional_category.category_id = :category_id ";
         }
         $query .= "LIMIT :first, :professionalPerPage ";
+        
         $statement = $this->pdo->prepare($query);   
         $statement->bindValue(':first', $first, PDO::PARAM_INT);
         $statement->bindValue(':professionalPerPage', $professionalPerPage, PDO::PARAM_INT);

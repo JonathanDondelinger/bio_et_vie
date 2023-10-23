@@ -4,15 +4,11 @@ namespace App\Controller;
 use App\Model\ProfessionalModel;
 
 class ProfessionalController extends BaseController {
-    public function professional(){
+    public function professional($id){
        
         $model = new ProfessionalModel;
     
-        if(isset($_GET['id'])) {
-            $Id = (int)$_GET['id'];
-        }
-
-        $professional = $model->getProfessional();
+        $professional = $model->getProfessional($id);
 
 
     echo $this->mustache->render('professional', [

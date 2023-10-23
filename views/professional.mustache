@@ -1,35 +1,42 @@
 {{>header}}
 {{>navbar}}
 <section class="pagepro">
-    
+    {{#professional}}
     <div class="containerpro">
         <div class="proname">
-            <h3>{{}}HOLLA</h3>
+            <h3>{{raisonSociale}}</h3>
         </div>
         <div class="proinfo">
+            
             <div class="proleft">     
+            
                 <div>
                     <h4>NUMÉRO BIO</h4>
-                    <p>{{}}</p>
+                    <p>{{numeroBio}}</p>
                     <h4>SIRET</h4>
-                    <p>{{}}</p>
+                    <p>{{siret}}</p>
                     <h4>SITE INTERNET</h4>
-                    <p>{{}}</p>
+                    <p>{{sitesWeb}}</p>
                 </div>
                 <div>
                     <h4>GÉRANT</h4>
-                    <p>{{}}</p>
+                    <p>{{gerant}}</p>
                     <h4>TÉLÉPHONE</h4>
-                    <p>{{}}</p>
+                    <p>{{telephone}}</p>
                     <h4>EMAIL</h4>
-                    <p>{{}}</p>
+                    <p>{{email}}</p>
                 </div>
+            
             </div>
             <div class="proright">
                 <h4>CATÉGORIE</h4>
+                <p>{{nom}}</p>
                 <h4>ACTIVITÉS</h4>
+                <p></p>
             </div>
+           
         </div>
     </div>
+     {{/professional}}
 </section>
 {{>footer}}
