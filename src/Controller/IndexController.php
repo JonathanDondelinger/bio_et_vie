@@ -9,8 +9,19 @@ class IndexController extends BaseController{
         
         $model = new IndexModel();
 
+        $pathLogo = array(
+
+        1 => '/images/icons/icon-artisan-commercant_gris.png',
+        2 => '/images/icons/icon-grossiste_gris.png',
+        3 => '/images/icons/icon-vente-directe_gris.png',
+        4 => '/images/icons/icon-magasin-specialise_gris.png',
+        5 => '/images/icons/icon-grande-et-moyenne-surface_gris.png',
+        6 => '/images/icons/icon-restaurant_gris.png'
+
+        );
+
         $categoryId = 0;
-       
+        
         if(isset($_GET['categorie'])) {
             $categoryId = (int)$_GET['categorie'];
         }
@@ -39,13 +50,14 @@ class IndexController extends BaseController{
         if ($categoryId > 0) {
             
             $professionals = $model->findProfessional($first, $professionalPerPage, $categoryId); 
-
+            
+           
         } else {
            
             $professionals = $model->findProfessional($first, $professionalPerPage);
         
         }
-        
+
         $pageNumbers = array();
         
         if($pageMin = $pages - $pages + 1 ){
@@ -75,6 +87,29 @@ class IndexController extends BaseController{
             $next = $pageMax;
         }
 
+       
+        echo '<pre>';
+        var_dump($professionals[10]);
+        echo '</pre>';
+       
+        $id_category = $professionals[]
+
+
+
+
+       for($i = 0; $i < 6; $i++){
+                
+        if($pathLogo[$i] === $professionals[$i]){
+            
+              $logo =  $pathLogo[$i];
+              
+            }
+            
+        }
+    
+        
+        
+
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
             'categorie' => $categoryId,
@@ -83,8 +118,8 @@ class IndexController extends BaseController{
             'pageNumbers' => $pageNumbers,
             'previous' => $previous,
             'next' => $next,
-            'nbProfessional' => $nbProfessional
-
+            'nbProfessional' => $nbProfessional,
+            'logo' => $logo
         ]);
     }
 }

@@ -9,7 +9,7 @@ class ProfessionalModel extends BaseModel{
 
    
     public function getProfessional($id){
-        $query = "SELECT *, GROUP_CONCAT(DISTINCT category.category_name SEPARATOR '\n') AS nom_category,
+        $query = "SELECT *, GROUP_CONCAT(DISTINCT category.category_name SEPARATOR '<br>') AS nom_category,
                             GROUP_CONCAT(DISTINCT activity.nom SEPARATOR '\n') AS nom_activity FROM professional 
                             LEFT JOIN professional_category ON professional_category.professional_id = professional.id 
                             LEFT JOIN category ON  professional_category.category_id = category.id_category 
