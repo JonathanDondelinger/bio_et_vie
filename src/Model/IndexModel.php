@@ -29,7 +29,7 @@ class IndexModel extends BaseModel
     }
     public function findProfessional($first, $professionalPerPage, $categoryId = 0)
     {
-        $query = "SELECT DISTINCT professional.id, professional.raisonSociale, professional.gerant, professional.telephone, category.id_category, GROUP_CONCAT(DISTINCT category.id_category ) FROM professional  
+        $query = "SELECT DISTINCT professional.id, professional.raisonSociale, professional.gerant, professional.telephone, GROUP_CONCAT(DISTINCT category.id_category ) AS id_category  FROM professional  
         LEFT JOIN professional_category ON professional_category.professional_id = professional.id 
         LEFT JOIN category ON  professional_category.category_id = category.id_category  ";
         if ($categoryId > 0) {
