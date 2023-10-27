@@ -11,6 +11,11 @@ class ProfessionalController extends BaseController {
         $professional = $model->getProfessional($id);
 
 
+        echo '<pre>';
+        var_dump($professional);
+        echo '</pre>';
+
+
     echo $this->mustache->render('professional', [
         'professional' => $professional,
     ]);

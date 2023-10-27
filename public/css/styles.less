@@ -1,0 +1,376 @@
+@color-black: #00000000;
+@color-white: #ffffff;
+
+@color1: #9DF9E8;
+@color2: #202328;
+@color3: #36605f;
+@color4: #1c383c;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+/* Nav Bar */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 10px 0 10px gray;
+
+
+    .navname {
+        display: flex;
+        align-items: center;
+        justify-items: start;
+        font-size: large;
+        width: 30%;
+    }
+
+    .containerlien {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 70px;
+    }
+
+     ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0px 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 400px;
+    background-image: url("../images/bandeau-footer.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-top: 100px;
+    padding-left: 15%;
+    font-size: 1.5em;
+}
+
+
+
+
+/* INDEX */
+
+/* SECTION 1 */
+.section1 {
+    background-image: url("../images/index/bandeau-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0%;
+}
+
+.section1 h1 {
+    font-size: 10em;
+    color: white;
+    padding: 10% 0% 0% 15%;
+}
+
+.section1 p {
+    font-size: 3em;
+    color: white;
+    padding: 0% 0% 15% 15%;
+}
+
+/* SECTION 2 */
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.containerinfo {
+    width: 100%;
+    height: 395px;
+    display: flex;
+    position: relative;
+    top: -150px;
+
+}
+
+.leftinfo {
+    width: 80%;
+    background-image: url("../images/index/infos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rightinfo {
+    width: 400px;
+    background-color: #202328;
+    padding: 50px;
+    justify-content: center;
+    color: #9DF9E8;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* SECTION 3 */
+
+
+.containerpresentation {
+    width: 100%;
+    height: 500px;
+    display: flex;
+
+}
+
+.imgpresentation {
+    background-image: url("../images/index/presentation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55%;
+}
+
+.presentation {
+    width: 45%;
+    text-align: left;
+    padding: 5%;
+}
+
+/* SECTION 4 */
+
+.containertri {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+.tri {
+    background-color: #202328;
+    color: #9DF9E8;
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo {
+
+    background-color: #36605f;
+
+
+}
+
+.tri:hover {
+    color: white;
+    background-color: #1c383c;
+    height: 200px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 0% 15% 5%;
+}
+
+.containercard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+}
+
+.pagination ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    padding-top: 20px;
+}
+
+/* CONTACT */
+
+#contact {
+    background-image: url("../images/contact/bandeau-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+.containerform {
+    width: 800px;
+    height: 700px;
+    margin: 8% 0 8% 20%;
+    background-color: #ffffff;
+    padding: 50px;
+    box-shadow: 0px 0 10px gray;
+
+
+}
+
+form {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#form1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#form2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+#form3 input {
+    height: 160px;
+    text-align: start;
+}
+
+.form {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    background-color: #dfe8e7;
+    border: none;
+    padding-left: 15px;
+
+}
+
+input::placeholder {
+    color: black;
+}
+
+button {
+    background-color: #202328;
+    color: white;
+    width: 60%;
+    height: 50px;
+    font-size: 1.1em;
+    align-self: center;
+    margin-top: 40px;
+}
+
+.containercontact {
+    height: 800px;
+    position: relative;
+    bottom: -100px;
+}
+
+.info {
+
+    background-color: #202328;
+    color: white;
+    padding-left: 10%;
+    padding-top: 10%;
+    width: 500px;
+    height: 400px;
+
+}
+
+.info ul {
+    list-style-type: none;
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+
+.info li {
+    padding-top: 20px;
+}
+
+.info h3 {
+    color: #9DF9E8;
+    font-size: 2em;
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    box-shadow: 0px 0 10px gray;
+}
+
+/* PROFESSIONAL */
+
+.pagepro {
+    width: 100%;
+    max-height: 1000px;
+    background-image: url(../images/unique/bandeau-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.containerpro {
+    width: 800px;
+    height: 600px;
+    margin-left: 25%;
+
+}
+
+.proname {
+    background-color: #202328;
+}
+
+.proinfo {
+    display: flex;
+}
+
+.proleft {
+    width: 70%;
+    background-color: white;
+}
+
+.proright {
+    background-color: #36605f;
+    width: 30%;
+    text-align: center;
+}

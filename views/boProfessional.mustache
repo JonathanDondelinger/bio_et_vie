@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{{>header}}
 <body>
     <a href="backOffice">Retour</a>
 <table>
@@ -36,6 +30,21 @@
         {{/professionals}}    
     </tbody>
 </table>
+<div class="pagination">
+    <ul>
+        <li>
+            <a href="/boProfessional?page={{previous}}">Précédent</a>
+        </li>
+        {{#pageNumbers}}
+        <li>
+            <a href="/boProfessional?page={{.}}">{{.}}</a>
+        </li>
+        {{/pageNumbers}}
+        <li>
+            <a href="/boProfessional?page={{next}}">Suivant</a>
+        </li>
+    </ul>
+</div>
 <a href="addProfessional">AJOUTER</a>
 </body>
 </html>

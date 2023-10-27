@@ -29,8 +29,8 @@ class AddProModel extends BaseModel{
         $statement->bindValue(":mixite", $mixite, PDO::PARAM_STR);
         $statement->bindValue(":Professionalcol", $Professionalcol, PDO::PARAM_STR);
         $statement->execute();
-        $addpro = $statement->fetch(PDO::FETCH_ASSOC);
-        return $addpro;
+        
+        
 
 
 

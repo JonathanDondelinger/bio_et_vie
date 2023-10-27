@@ -55,14 +55,6 @@ class IndexController extends BaseController
             $professionals = $model->findProfessional($first, $professionalPerPage);
         }
 
-
-        
-
-
-
-
-
-
         $pageNumbers = array();
 
         if ($pageMin = $pages - $pages + 1) {
@@ -96,30 +88,33 @@ class IndexController extends BaseController
             $idCategory = (int)$professional['id_category'];
             
 
-            /* echo '<pre>';
-            var_dump( $idCategory);
-            echo '</pre>'; */
-
             
             if ($idCategory > 0 && isset($pathLogo[$idCategory])) {
                 
                 $logo = $pathLogo[$idCategory];
+                
+                
+                echo '<pre>';
+                var_dump($pathLogo[$idCategory]);
+                echo '</pre>'; 
+
+            }else{
+                
+                $logo = null;
                 echo '<pre>';
                 var_dump($logo);
                 echo '</pre>';
-                
-            }elseif($idCategory === 0) {
-                
-                $logo = 'HS';
             }
         }
 
 
+       /*  $professionals = array_map(function($professional) use ($pathLogo) {
+            $idCategory = (int)$professional['id_category'];
+            $professional['logo'] = ($idCategory > 0 && isset($pathLogo[$idCategory])) ? $pathLogo[$idCategory] : null;
+            return $professional;
+        }, $professionals); */
+
         
-
-
-
-
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,

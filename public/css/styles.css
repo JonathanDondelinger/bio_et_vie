@@ -1,350 +1,291 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  } 
-h2{
-    font-size: 3em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-                       /* Nav Bar */
-
-nav{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 10px 0 10px gray;
+h2 {
+  font-size: 3em;
 }
-
-.navname{
-    display: flex;
-    align-items: center;
-    justify-items: start;
-    font-size: large;
-    width: 30%;
+/* Nav Bar */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 10px 0 10px gray;
 }
-
-.containerlien{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 70px;
+nav .navname {
+  display: flex;
+  align-items: center;
+  justify-items: start;
+  font-size: large;
+  width: 30%;
 }
-
-nav ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style-type: none;  
+nav .containerlien {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
 }
-
-a{
-    text-decoration: none;
-    font-size: 1.1em;
-    padding:0px 10px;
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
 }
-
-                                            /* FOOTER */
-
-footer{
-    width: 100%;
-    height: 400px;
-    background-image: url("../images/bandeau-footer.jpg");
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding-top: 100px;
-    padding-left: 15%;
-    font-size: 1.5em;
+a {
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 0px 10px;
 }
-
-
-
-
-                                      /* INDEX */
-
-                                      /* SECTION 1 */
-.section1{
-    background-image: url("../images/index/bandeau-desktop.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0%;
+/* FOOTER */
+footer {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/bandeau-footer.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 100px;
+  padding-left: 15%;
+  font-size: 1.5em;
 }
-
-.section1 h1{
-    font-size: 10em;
-    color: white;
-    padding:10% 0% 0% 15%;
+/* INDEX */
+/* SECTION 1 */
+.section1 {
+  background-image: url("../images/index/bandeau-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
 }
-
-.section1 p{
-    font-size: 3em;
-    color: white;
-    padding:0% 0% 15% 15%;
+.section1 h1 {
+  font-size: 10em;
+  color: white;
+  padding: 10% 0% 0% 15%;
 }
-
-                                   /* SECTION 2 */
-
-.section2{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
+.section1 p {
+  font-size: 3em;
+  color: white;
+  padding: 0% 0% 15% 15%;
 }
-
-.containerinfo{
-    width: 100%;
-    height: 395px;
-    display: flex;
-    position: relative;
-    top:-150px;
-    
+/* SECTION 2 */
+.section2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
 }
-
-.leftinfo{
-    width: 80%;
-    background-image: url("../images/index/infos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.containerinfo {
+  width: 100%;
+  height: 395px;
+  display: flex;
+  position: relative;
+  top: -150px;
 }
-
-.rightinfo{
-    width: 400px;
-    background-color: #202328;
-    padding:50px;
-    justify-content: center;
-    color:#9DF9E8;
-    font-size: 1.2em;
-    text-align: center;
+.leftinfo {
+  width: 80%;
+  background-image: url("../images/index/infos.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-                                    /* SECTION 3 */
-
-
-.containerpresentation{
-    width: 100%;
-    height: 500px;
-    display: flex;
-    
-} 
-
-.imgpresentation{
-    background-image: url("../images/index/presentation.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 55%;
+.rightinfo {
+  width: 400px;
+  background-color: #202328;
+  padding: 50px;
+  justify-content: center;
+  color: #9DF9E8;
+  font-size: 1.2em;
+  text-align: center;
 }
-
-.presentation{
-    width: 45%;
-    text-align: left;
-    padding: 5%;
+/* SECTION 3 */
+.containerpresentation {
+  width: 100%;
+  height: 500px;
+  display: flex;
 }
-                                /* SECTION 4 */
-
-.containertri{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px;
-    width: 100%;
-    text-align: center;
-    padding: 0;
+.imgpresentation {
+  background-image: url("../images/index/presentation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 55%;
 }
-
-.tri{
-    background-color: #202328;
-    color:#9DF9E8;
-    font-size: 1.6em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.presentation {
+  width: 45%;
+  text-align: left;
+  padding: 5%;
 }
-
-.logo{
-   
-    background-color: #36605f;
-   
-   
+/* SECTION 4 */
+.containertri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  width: 100%;
+  text-align: center;
+  padding: 0;
 }
-
-.tri:hover{
-    color: white;
-    background-color: #1c383c;
-    height: 200px;
+.tri {
+  background-color: #202328;
+  color: #9DF9E8;
+  font-size: 1.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-section{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    margin: 0% 15% 5%;
+.logo {
+  background-color: #36605f;
 }
-.containercard{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+.tri:hover {
+  color: white;
+  background-color: #1c383c;
+  height: 200px;
 }
-.card{
-    width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    box-shadow: 0px 0px 5px gray;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 0% 15% 5%;
 }
-.pagination{
-    display: flex;
-    justify-content: center;
-    
+.containercard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
 }
-.pagination ul{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    
-    padding-top: 20px;
+.card {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  box-shadow: 0px 0px 5px gray;
 }
-
-                                                        /* CONTACT */
-
-#contact{
-    background-image: url("../images/contact/bandeau-desktop.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
+.pagination {
+  display: flex;
+  justify-content: center;
 }
-
-.containerform{
-    width: 800px;
-    height: 700px;
-    margin: 8% 0 8% 20%;
-    background-color: white;
-    padding: 50px;
-    box-shadow: 0px 0 10px gray;
-
-
+.pagination ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-top: 20px;
 }
-
-form{
-    width: 100%;
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
+/* CONTACT */
+#contact {
+  background-image: url("../images/contact/bandeau-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
 }
-
-#form1{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+.containerform {
+  width: 800px;
+  height: 700px;
+  margin: 8% 0 8% 20%;
+  background-color: #ffffff;
+  padding: 50px;
+  box-shadow: 0px 0 10px gray;
 }
-
-#form2{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 15px;
+form {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-#form3 input{
-    height: 160px;
-    text-align: start;
+#form1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
-
-.form{
-    width: 100%;
+#form2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
 }
-
-input{
-    width: 100%;
-    height: 40px;
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    background-color: #dfe8e7;
-    border: none;
-    padding-left: 15px;
-    
+#form3 input {
+  height: 160px;
+  text-align: start;
 }
-
-input::placeholder{
-    color: black;
+.form {
+  width: 100%;
 }
-button{
-    background-color: #202328;
-    color: white;
-    width: 60%;
-    height: 50px;
-    font-size: 1.1em;
-    align-self: center;
-    margin-top: 40px;
+input {
+  width: 100%;
+  height: 40px;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  background-color: #dfe8e7;
+  border: none;
+  padding-left: 15px;
 }
-
-.containercontact{
-    height: 800px;
-    position: relative;
-    bottom: -100px;
+input::placeholder {
+  color: black;
 }
-
+button {
+  background-color: #202328;
+  color: white;
+  width: 60%;
+  height: 50px;
+  font-size: 1.1em;
+  align-self: center;
+  margin-top: 40px;
+}
+.containercontact {
+  height: 800px;
+  position: relative;
+  bottom: -100px;
+}
 .info {
-    
-    background-color: #202328;
-    color: white;
-    padding-left: 10%;
-    padding-top: 10%;
-    width: 500px;
-    height: 400px;
-    
+  background-color: #202328;
+  color: white;
+  padding-left: 10%;
+  padding-top: 10%;
+  width: 500px;
+  height: 400px;
 }
-
-.info ul{
-    list-style-type: none;
-    font-size: 1.5em;
-    margin-top: 40px;  
+.info ul {
+  list-style-type: none;
+  font-size: 1.5em;
+  margin-top: 40px;
 }
-.info li{
-    padding-top: 20px;
+.info li {
+  padding-top: 20px;
 }
-
-.info h3{
-    color: #9DF9E8;
-    font-size: 2em;
+.info h3 {
+  color: #9DF9E8;
+  font-size: 2em;
 }
-
-.map{
-    width: 100%;
-    height: 400px;
-    box-shadow: 0px 0 10px gray;
+.map {
+  width: 100%;
+  height: 400px;
+  box-shadow: 0px 0 10px gray;
 }
-
-                                        /* PROFESSIONAL */
-
-.pagepro{
-    width: 100%;
-    max-height: 1000px;
-    background-image: url(../images/unique/bandeau-desktop.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
+/* PROFESSIONAL */
+.pagepro {
+  width: 100%;
+  max-height: 1000px;
+  background-image: url(../images/unique/bandeau-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
 }
-.containerpro{
-    width: 800px;
-    height: 600px;
-    margin-left: 25%;
-    
+.containerpro {
+  width: 800px;
+  height: 600px;
+  margin-left: 25%;
 }
-.proname{
-    background-color: #202328;
+.proname {
+  background-color: #202328;
 }
-.proinfo{
-    display: flex;
+.proinfo {
+  display: flex;
 }
-.proleft{
-    width: 70%;
-    background-color: white;
+.proleft {
+  width: 70%;
+  background-color: white;
 }
-.proright{
-    background-color: #36605f;
-    width: 30%;
-    text-align: center;
+.proright {
+  background-color: #36605f;
+  width: 30%;
+  text-align: center;
 }
