@@ -84,37 +84,25 @@ class IndexController extends BaseController
             $next = $pageMax;
         }
 
-        foreach ($professionals as $professional) {
-            $idCategory = (int)$professional['id_category'];
-            
 
-            
+
+        foreach ($professionals as &$professional) {
+            $idCategory = (int)$professional['id_category'];
+                     
             if ($idCategory > 0 && isset($pathLogo[$idCategory])) {
                 
-                $logo = $pathLogo[$idCategory];
-                
-                
-                echo '<pre>';
-                var_dump($pathLogo[$idCategory]);
-                echo '</pre>'; 
+                $logo = $pathLogo[$idCategory];                
 
             }else{
                 
                 $logo = null;
-                echo '<pre>';
-                var_dump($logo);
-                echo '</pre>';
+                
             }
+
+            $professional['logo'] = $logo;
+
         }
 
-
-       /*  $professionals = array_map(function($professional) use ($pathLogo) {
-            $idCategory = (int)$professional['id_category'];
-            $professional['logo'] = ($idCategory > 0 && isset($pathLogo[$idCategory])) ? $pathLogo[$idCategory] : null;
-            return $professional;
-        }, $professionals); */
-
-        
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
@@ -125,7 +113,7 @@ class IndexController extends BaseController
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional,
-            'logo' => $logo
+            
         ]);
     }
 }

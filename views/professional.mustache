@@ -4,21 +4,25 @@
     {{#professional}}
     <div class="containerpro">
         <div class="proname">
+            <img src="{{logo}}" alt="">
             <h3>{{raisonSociale}}</h3>
         </div>
         <div class="proinfo">
             
             <div class="proleft">     
             
-                <div>
+                <div class='Proleftsec'>
                     <h4>NUMÉRO BIO</h4>
                     <p>{{numeroBio}}</p>
                     <h4>SIRET</h4>
                     <p>{{siret}}</p>
                     <h4>SITE INTERNET</h4>
-                    <p>{{sitesWeb}}</p>
+                    {{#url}}
+                    <p>{{.}}</p>
+                    {{/url}}
                 </div>
-                <div>
+                <div class='ProleftSpace'></div>
+                <div class='Proleftsec'>
                     <h4>GÉRANT</h4>
                     <p>{{gerant}}</p>
                     <h4>TÉLÉPHONE</h4>
@@ -32,7 +36,7 @@
                 <h4>CATÉGORIE</h4>
                 <p>{{{nom_category}}}</p>
                 <h4>ACTIVITÉS</h4>
-                <p>{{nom_activity}}</p>
+                <p>- {{nom_activity}}</p>
                 <p></p>
             </div>
            

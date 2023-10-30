@@ -5,6 +5,7 @@
 @color2: #202328;
 @color3: #36605f;
 @color4: #1c383c;
+@color5: #4acab3;
 
 * {
     margin: 0;
@@ -16,14 +17,14 @@ h2 {
     font-size: 3em;
 }
 
-/* Nav Bar */
+// Nav Bar 
 
 nav {
     width: 100%;
     display: flex;
     justify-content: space-around;
     box-shadow: 10px 0 10px gray;
-
+    color: black;
 
     .navname {
         display: flex;
@@ -40,11 +41,17 @@ nav {
         height: 70px;
     }
 
-     ul {
+    ul {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         list-style-type: none;
+    }
+    .spaceNav{
+        border-right: solid 1px;
+    }
+    a{
+        margin: 0px 20px 0px 20px;
     }
 }
 
@@ -55,7 +62,7 @@ a {
 }
 
 
-/* FOOTER */
+// FOOTER 
 
 footer {
     width: 100%;
@@ -67,14 +74,18 @@ footer {
     padding-top: 100px;
     padding-left: 15%;
     font-size: 1.5em;
+    color: white;
+    a {
+        color: #4acab3;
+    }
 }
 
 
 
 
-/* INDEX */
+// INDEX 
 
-/* SECTION 1 */
+// SECTION 1 
 .section1 {
     background-image: url("../images/index/bandeau-desktop.jpg");
     background-repeat: no-repeat;
@@ -94,7 +105,7 @@ footer {
     padding: 0% 0% 15% 15%;
 }
 
-/* SECTION 2 */
+// SECTION 2 
 
 .section2 {
     display: flex;
@@ -120,7 +131,7 @@ footer {
 
 .rightinfo {
     width: 400px;
-    background-color: #202328;
+    background-color: @color2;
     padding: 50px;
     justify-content: center;
     color: #9DF9E8;
@@ -128,7 +139,7 @@ footer {
     text-align: center;
 }
 
-/* SECTION 3 */
+// SECTION 3 
 
 
 .containerpresentation {
@@ -151,7 +162,7 @@ footer {
     padding: 5%;
 }
 
-/* SECTION 4 */
+// SECTION 4 
 
 .containertri {
     display: grid;
@@ -163,7 +174,7 @@ footer {
 }
 
 .tri {
-    background-color: #202328;
+    background-color: @color2;
     color: #9DF9E8;
     font-size: 1.6em;
     display: flex;
@@ -176,7 +187,6 @@ footer {
 .logo {
 
     background-color: #36605f;
-
 
 }
 
@@ -205,8 +215,19 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     box-shadow: 0px 0px 5px gray;
+    h4{
+        margin: 30px;
+    }
+    h5{
+        font-size: 1.5em;
+        color: black;
+    }
+    p{
+        font-size: 1.3em;
+        color: black;
+    }
 }
 
 .pagination {
@@ -223,7 +244,7 @@ section {
     padding-top: 20px;
 }
 
-/* CONTACT */
+// CONTACT 
 
 #contact {
     background-image: url("../images/contact/bandeau-desktop.jpg");
@@ -315,21 +336,22 @@ button {
     width: 500px;
     height: 400px;
 
-}
 
-.info ul {
-    list-style-type: none;
-    font-size: 1.5em;
-    margin-top: 40px;
-}
 
-.info li {
-    padding-top: 20px;
-}
+    ul {
+        list-style-type: none;
+        font-size: 1.5em;
+        margin-top: 40px;
+    }
 
-.info h3 {
-    color: #9DF9E8;
-    font-size: 2em;
+    li {
+        padding-top: 20px;
+    }
+
+    h3 {
+        color: #9DF9E8;
+        font-size: 2em;
+    }
 }
 
 .map {
@@ -338,39 +360,97 @@ button {
     box-shadow: 0px 0 10px gray;
 }
 
-/* PROFESSIONAL */
+// PROFESSIONAL 
 
 .pagepro {
     width: 100%;
-    max-height: 1000px;
+    height: 800px;
+    max-height: 100%;
     background-image: url(../images/unique/bandeau-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    object-fit: fill;
+    margin-bottom: 10%;
 }
 
 .containerpro {
-    width: 800px;
-    height: 600px;
-    margin-left: 25%;
+    width: 46%;
+    height: 550px;
+    margin-left: 30%;
+    position: relative;
+    top: 28%;
 
 }
 
 .proname {
     background-color: #202328;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+
+    img {
+        height: 50px;
+        object-fit: fill;
+
+    }
+
+    h3 {
+        color: #9DF9E8;
+        font-size: 2em;
+        padding-left: 20px;
+    }
+
 }
 
 .proinfo {
     display: flex;
+    height: 100%;
+
 }
 
 .proleft {
     width: 70%;
+    height: 100%;
     background-color: white;
+    box-shadow: -2px 2px 5px gray;
+
+    .Proleftsec {
+        width: 350px;
+        padding: 50px;
+        padding-top: 30px;
+
+        h4 {
+            margin-top: 20px;
+        }
+
+    }
+
+    .ProleftSpace {
+        width: 300px;
+        height: 2px;
+        background-color: black;
+        margin-left: 50px;
+    }
+}
+
+h4 {
+    color: #4acab3;
+    font-size: 1.3em;
 }
 
 .proright {
-    background-color: #36605f;
+    background-color: #1c383c;
     width: 30%;
-    text-align: center;
+
+    text-align: left;
+    padding-left: 50px;
+
+    h4 {
+        margin-top: 50px;
+    }
+
+    p {
+        color: white;
+    }
 }
