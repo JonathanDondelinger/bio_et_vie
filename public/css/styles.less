@@ -1,11 +1,5 @@
-@color-black: #00000000;
-@color-white: #ffffff;
 
-@color1: #9DF9E8;
-@color2: #202328;
-@color3: #36605f;
-@color4: #1c383c;
-@color5: #4acab3;
+@import "var.less";
 
 * {
     margin: 0;
@@ -24,7 +18,7 @@ nav {
     display: flex;
     justify-content: space-around;
     box-shadow: 10px 0 10px gray;
-    color: black;
+    color: @color-black;
 
     .navname {
         display: flex;
@@ -47,10 +41,12 @@ nav {
         justify-content: space-around;
         list-style-type: none;
     }
-    .spaceNav{
+
+    .spaceNav {
         border-right: solid 1px;
     }
-    a{
+
+    a {
         margin: 0px 20px 0px 20px;
     }
 }
@@ -74,9 +70,10 @@ footer {
     padding-top: 100px;
     padding-left: 15%;
     font-size: 1.5em;
-    color: white;
+    color: @color-white;
+
     a {
-        color: #4acab3;
+        color: @color5;
     }
 }
 
@@ -95,13 +92,13 @@ footer {
 
 .section1 h1 {
     font-size: 10em;
-    color: white;
+    color: @color-white;
     padding: 10% 0% 0% 15%;
 }
 
 .section1 p {
     font-size: 3em;
-    color: white;
+    color: @color-white;
     padding: 0% 0% 15% 15%;
 }
 
@@ -115,7 +112,7 @@ footer {
 
 .containerinfo {
     width: 100%;
-    height: 395px;
+    height: 20vw;
     display: flex;
     position: relative;
     top: -150px;
@@ -134,7 +131,7 @@ footer {
     background-color: @color2;
     padding: 50px;
     justify-content: center;
-    color: #9DF9E8;
+    color: @color1;
     font-size: 1.2em;
     text-align: center;
 }
@@ -144,7 +141,7 @@ footer {
 
 .containerpresentation {
     width: 100%;
-    height: 500px;
+    height: 30vw;
     display: flex;
 
 }
@@ -153,7 +150,8 @@ footer {
     background-image: url("../images/index/presentation.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 55%;
+    width: 40vw;
+    height: 25vw;
 }
 
 .presentation {
@@ -167,33 +165,52 @@ footer {
 .containertri {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px;
+    grid-auto-rows: 25vh;
     width: 100%;
+    height: 50vh;
     text-align: center;
     padding: 0;
+
+
+    .tri {
+        width: 100%;
+        height: 25vh;
+        background-color: @color2;
+        color: @color1;
+        font-size: 1.6em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: @color3;
+            border-radius: 50%;
+            position: relative;
+            right: 12%;
+            bottom: 5%;
+            z-index: auto;
+        }
+        img{
+            z-index: 1;
+            position: relative;
+            top: 10%;
+        }
+
+    }
+    a{
+        padding: 0;
+    }
 }
 
-.tri {
-    background-color: @color2;
-    color: #9DF9E8;
-    font-size: 1.6em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-}
-
-.logo {
-
-    background-color: #36605f;
-
-}
 
 .tri:hover {
-    color: white;
-    background-color: #1c383c;
-    height: 200px;
+    color: @color-white;
+    background-color: @color4;
+    height: 25vh;
 }
 
 section {
@@ -210,23 +227,26 @@ section {
 }
 
 .card {
-    width: 300px;
-    height: 400px;
+    width: 15vw;
+    height: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 5px gray;
-    h4{
+
+    h4 {
         margin: 30px;
     }
-    h5{
+
+    h5 {
         font-size: 1.5em;
-        color: black;
+        color: @color-black;
     }
-    p{
+
+    p {
         font-size: 1.3em;
-        color: black;
+        color: @color-black;
     }
 }
 
@@ -254,8 +274,8 @@ section {
 }
 
 .containerform {
-    width: 800px;
-    height: 700px;
+    width: 41vw;
+    height: 36vw;
     margin: 8% 0 8% 20%;
     background-color: #ffffff;
     padding: 50px;
@@ -266,7 +286,7 @@ section {
 
 form {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 1.6vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,7 +308,7 @@ form {
 }
 
 #form3 input {
-    height: 160px;
+    height: 8.5vw;
     text-align: start;
 }
 
@@ -312,8 +332,8 @@ input::placeholder {
 }
 
 button {
-    background-color: #202328;
-    color: white;
+    background-color: @color2;
+    color: @color-white;
     width: 60%;
     height: 50px;
     font-size: 1.1em;
@@ -322,19 +342,19 @@ button {
 }
 
 .containercontact {
-    height: 800px;
+    height: 41vw;
     position: relative;
-    bottom: -100px;
+    bottom: -5vw;
 }
 
 .info {
 
-    background-color: #202328;
-    color: white;
+    background-color: @color2;
+    color: @color-white;
     padding-left: 10%;
     padding-top: 10%;
-    width: 500px;
-    height: 400px;
+    width: 26vw;
+    height: 21vw;
 
 
 
@@ -349,22 +369,26 @@ button {
     }
 
     h3 {
-        color: #9DF9E8;
+        color: @color1;
         font-size: 2em;
     }
 }
 
 .map {
     width: 100%;
-    height: 400px;
+    height: 21vw;
     box-shadow: 0px 0 10px gray;
+}
+.carte{
+    width: 100%;
+    height: 100%;
 }
 
 // PROFESSIONAL 
 
 .pagepro {
     width: 100%;
-    height: 800px;
+    height: 40vw;
     max-height: 100%;
     background-image: url(../images/unique/bandeau-desktop.jpg);
     background-repeat: no-repeat;
@@ -376,7 +400,7 @@ button {
 
 .containerpro {
     width: 46%;
-    height: 550px;
+    height: 27vw;
     margin-left: 30%;
     position: relative;
     top: 28%;
@@ -384,7 +408,7 @@ button {
 }
 
 .proname {
-    background-color: #202328;
+    background-color: @color2;
     display: flex;
     align-items: center;
     padding: 25px;
@@ -396,7 +420,7 @@ button {
     }
 
     h3 {
-        color: #9DF9E8;
+        color: @color1;
         font-size: 2em;
         padding-left: 20px;
     }
@@ -412,11 +436,11 @@ button {
 .proleft {
     width: 70%;
     height: 100%;
-    background-color: white;
+    background-color: @color-white;
     box-shadow: -2px 2px 5px gray;
 
     .Proleftsec {
-        width: 350px;
+        width: 18vwpx;
         padding: 50px;
         padding-top: 30px;
 
@@ -427,20 +451,20 @@ button {
     }
 
     .ProleftSpace {
-        width: 300px;
+        width: 15.5vw;
         height: 2px;
-        background-color: black;
+        background-color: @color-black;
         margin-left: 50px;
     }
 }
 
 h4 {
-    color: #4acab3;
+    color: @color5;
     font-size: 1.3em;
 }
 
 .proright {
-    background-color: #1c383c;
+    background-color: @color4;
     width: 30%;
 
     text-align: left;
@@ -451,6 +475,6 @@ h4 {
     }
 
     p {
-        color: white;
+        color: @color-white;
     }
 }
