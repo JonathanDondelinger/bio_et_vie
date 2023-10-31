@@ -12,7 +12,7 @@
         </div>
         <div class="rightinfo">
         <img src="/images/icons/icon-ble.png" alt="">
-        <p>{{nbProfessional}}</p>
+        <p id="nbProfessional">{{nbProfessional}}</p>
         <P>professionnels</p>
         <img src="/images/icons/icon-france.png" alt="">
         <p>Dans la France entière</p>
@@ -22,11 +22,14 @@
 <section class="section3">
     <div class="containerpresentation">
         <div class="imgpresentation"></div>
+        
         <div class="presentation">
             <h2>QUI SONT-ILS ?</h2>
+            <div id="border-presentation"></div>
             <p>Lorem ipsum dolor sit amet. Non earum consequatur et porro dicta qui minima sequi et eius reiciendis vel eligendi maiores et omnis saepe 33 enim dolores. Rem nesciunt facere et eaque laborum ab aliquam doloremque et galisum corporis eum molestiae deserunt!</p>
         </div>
     </div>
+    <div id='border-imgpresentation'></div>
 </section>
 <section class="section4" id='categories'>
     <div class="containertri">
@@ -82,6 +85,7 @@
 </section>
 <section class="section5" id="Professionnels">
     <h2>LES PROFESSIONNELS</h2>
+    <div id="border-professionnels"></div>
     <div class="containercard">
         
         {{#professionals}}
@@ -96,7 +100,7 @@
         {{/professionals}}
 
     </div>
-
+    <div id="border-containercard"></div>
   <div class="pagination">
     <ul>
         <li>
