@@ -11,7 +11,7 @@ nav {
   display: flex;
   justify-content: space-around;
   box-shadow: 10px 0 10px gray;
-  color: #00000000;
+  color: #000000;
 }
 nav .navname {
   display: flex;
@@ -157,7 +157,6 @@ section {
   padding: 0;
 }
 .containertri .tri {
-  width: 100%;
   height: 25vh;
   background-color: #202328;
   color: #9DF9E8;
@@ -166,6 +165,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 .containertri .tri .logo {
   width: 50px;
@@ -226,11 +226,11 @@ section {
 }
 .card h5 {
   font-size: 1.5em;
-  color: #00000000;
+  color: #000000;
 }
 .card p {
   font-size: 1.3em;
-  color: #00000000;
+  color: #000000;
 }
 #border-containercard {
   width: 12vw;
@@ -361,9 +361,8 @@ button {
   margin-bottom: 10%;
 }
 .containerpro {
-  width: 46%;
-  height: 27vw;
-  margin-left: 30%;
+  margin-left: 25%;
+  margin-right: 25%;
   position: relative;
   top: 28%;
 }
@@ -384,7 +383,6 @@ button {
 }
 .proinfo {
   display: flex;
-  height: 100%;
 }
 .proleft {
   width: 70%;
@@ -403,7 +401,7 @@ button {
 .proleft .ProleftSpace {
   width: 15.5vw;
   height: 2px;
-  background-color: #00000000;
+  background-color: #000000;
   margin-left: 50px;
 }
 h4 {
@@ -421,4 +419,11 @@ h4 {
 }
 .proright p {
   color: #ffffff;
+}
+@media screen and (max-width: 1024px) {
+  .containerpro {
+    margin: 0 15% 0 15%;
+    position: relative;
+    top: 28%;
+  }
 }
