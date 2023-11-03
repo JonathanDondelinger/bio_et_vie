@@ -98,22 +98,19 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0%;
-}
 
-.section1 h1 {
-    font-size: 10em;
-    color: @color-white;
-    padding: 10% 0% 0% 15%;
-}
 
-.section1 p {
-    font-size: 3em;
-    color: @color-white;
-    padding: 0% 0% 15% 15%;
-}
+    h1 {
+        font-size: 10em;
+        color: @color-white;
+        padding: 10% 0% 0% 15%;
+    }
 
-#nbProfessional {
-    font-size: 3em;
+    p {
+        font-size: 3em;
+        color: @color-white;
+        padding: 0% 0% 15% 15%;
+    }
 }
 
 // SECTION 2 
@@ -125,11 +122,9 @@ section {
 }
 
 .containerinfo {
-    width: 100%;
-    height: 20vw;
     display: flex;
     position: relative;
-    top: -150px;
+    top: -7.5vw;
 
 }
 
@@ -138,16 +133,21 @@ section {
     background-image: url("../images/index/infos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .rightinfo {
-    width: 400px;
+    width: 20vw;
     background-color: @color2;
     padding: 50px;
     justify-content: center;
     color: @color1;
     font-size: 1.2em;
     text-align: center;
+}
+
+#nbProfessional {
+    font-size: 3em;
 }
 
 // SECTION 3 
@@ -426,6 +426,7 @@ button {
     height: 41vw;
     position: relative;
     bottom: -5vw;
+
 }
 
 .info {
@@ -443,6 +444,8 @@ button {
         list-style-type: none;
         font-size: 1.5em;
         margin-top: 40px;
+        display: flex;
+        flex-direction: column;
     }
 
     li {
@@ -482,10 +485,10 @@ button {
 
 .containerpro {
 
-
+    width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    position: relative;
+    position: absolute;
     top: 28%;
 
 }
@@ -565,19 +568,262 @@ h4 {
         margin: 0 15% 0 15%;
         position: relative;
         top: 28%;
-    
+
     }
-  }
-  @media screen and (max-width: 720px) {
-    
-    
-    
-  }
-  @media screen and (max-width: 480px) {
-   
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin: 0% 10% 5%;
+    }
+
+    .leftinfo {
+        width: 80%;
+        background-image: url("../images/index/infos.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+    }
+
+    .section1 {
+        margin: 0%;
+
+        h1 {
+            font-size: 8em;
+            color: @color-white;
+            padding: 10% 0% 0% 10%;
+        }
+
+        p {
+            font-size: 2em;
+            color: @color-white;
+            padding: 0% 0% 15% 10%;
+        }
+    }
+
+    .leftinfo {
+        width: 90%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .rightinfo {
+        padding: 20px;
+        color: @color1;
+        font-size: 1em;
+        text-align: center;
+
+        img {
+            width: 5vw;
+        }
+    }
+
+    #nbProfessional {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .tri {
+
+        height: 25vh;
+
+        img {
+            width: 100px;
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: @color3;
+            border-radius: 50%;
+            position: relative;
+            right: 12%;
+            bottom: 5%;
+            z-index: auto;
+        }
+
+        img {
+            z-index: 1;
+            position: relative;
+            top: 10%;
+        }
+
+    }
+
+    a {
+        padding: 0;
+
+    }
+
+    .card {
+        img {
+            width: 80px;
+        }
+
+        h4 {
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        h5 {
+            font-size: 0.8em;
+            color: @color-black;
+        }
+
+        p {
+            font-size: 0.8em;
+            color: @color-black;
+        }
+    }
+
+    .pagination {
+
+        font-size: 1em;
+
+        li {
+            margin: 10px;
+        }
+    }
+
+    // PROFESSIONNAL
+    .pagepro {
+        margin-bottom: 40%;
+    }
+
+    .containerpro {
+
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        position: absolute;
+        top: 18%;
+
+    }
+
+    //CONTACT
+
+
+    .containerform {
+        width: 45vw;
+        height: 45vw;
+        margin: 8% 0 8% 10%;
+        background-color: #ffffff;
+        padding: 30px;
+        box-shadow: 0px 0 10px gray;
+
+
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        padding-top: 1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #form1 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    #form2 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+    }
+
+    #form3 input {
+        height: 8.5vw;
+        text-align: start;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        font-size: 1em;
+        margin-bottom: 20px;
+        background-color: #dfe8e7;
+        border: none;
+        padding-left: 15px;
+
+    }
+
+    button {
+        background-color: @color2;
+        color: @color-white;
+        width: 60%;
+        height: 50px;
+        font-size: 1.1em;
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    .containercontact {
+        width: 35vw;
+        height: 50vw;
+        position: relative;
+        bottom: -5vw;
+
+    }
+
+    .info {
+
+        width: 100%;
+        padding-left: 10%;
+        padding-top: 10%;
+        height: 25vw;
 
 
 
-    
-  }
-  
+        ul {
+            list-style-type: none;
+            font-size: 1em;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            padding-top: 10px;
+        }
+
+        h3 {
+            color: @color1;
+            font-size: 1.5em;
+        }
+    }
+
+    .map {
+        width: 100%;
+        height: 25vw;
+        box-shadow: 0px 0 10px gray;
+    }
+
+    .carte {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 720px) {}
+
+@media screen and (max-width: 480px) {}

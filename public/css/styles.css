@@ -80,19 +80,14 @@ section {
   color: #ffffff;
   padding: 0% 0% 15% 15%;
 }
-#nbProfessional {
-  font-size: 3em;
-}
 .section2 {
   justify-content: center;
   margin-bottom: 0;
 }
 .containerinfo {
-  width: 100%;
-  height: 20vw;
   display: flex;
   position: relative;
-  top: -150px;
+  top: -7.5vw;
 }
 .leftinfo {
   width: 80%;
@@ -101,13 +96,16 @@ section {
   background-size: cover;
 }
 .rightinfo {
-  width: 400px;
+  width: 20vw;
   background-color: #202328;
   padding: 50px;
   justify-content: center;
   color: #9DF9E8;
   font-size: 1.2em;
   text-align: center;
+}
+#nbProfessional {
+  font-size: 3em;
 }
 .containerpresentation {
   width: 100%;
@@ -332,6 +330,8 @@ button {
   list-style-type: none;
   font-size: 1.5em;
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
 }
 .info li {
   padding-top: 20px;
@@ -361,9 +361,10 @@ button {
   margin-bottom: 10%;
 }
 .containerpro {
+  width: 50%;
   margin-left: 25%;
   margin-right: 25%;
-  position: relative;
+  position: absolute;
   top: 28%;
 }
 .proname {
@@ -425,5 +426,196 @@ h4 {
     margin: 0 15% 0 15%;
     position: relative;
     top: 28%;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 0% 10% 5%;
+  }
+  .leftinfo {
+    width: 80%;
+    background-image: url("../images/index/infos.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .section1 {
+    margin: 0%;
+  }
+  .section1 h1 {
+    font-size: 8em;
+    color: #ffffff;
+    padding: 10% 0% 0% 10%;
+  }
+  .section1 p {
+    font-size: 2em;
+    color: #ffffff;
+    padding: 0% 0% 15% 10%;
+  }
+  .leftinfo {
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rightinfo {
+    padding: 20px;
+    color: #9DF9E8;
+    font-size: 1em;
+    text-align: center;
+  }
+  .rightinfo img {
+    width: 5vw;
+  }
+  #nbProfessional {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  .tri {
+    height: 25vh;
+  }
+  .tri img {
+    width: 100px;
+  }
+  .tri p {
+    font-size: 0.8em;
+  }
+  .tri .logo {
+    width: 50px;
+    height: 50px;
+    background-color: #36605f;
+    border-radius: 50%;
+    position: relative;
+    right: 12%;
+    bottom: 5%;
+    z-index: auto;
+  }
+  .tri img {
+    z-index: 1;
+    position: relative;
+    top: 10%;
+  }
+  a {
+    padding: 0;
+  }
+  .card img {
+    width: 80px;
+  }
+  .card h4 {
+    font-size: 1em;
+    margin: 10px;
+  }
+  .card h5 {
+    font-size: 0.8em;
+    color: #000000;
+  }
+  .card p {
+    font-size: 0.8em;
+    color: #000000;
+  }
+  .pagination {
+    font-size: 1em;
+  }
+  .pagination li {
+    margin: 10px;
+  }
+  .pagepro {
+    margin-bottom: 40%;
+  }
+  .containerpro {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    position: absolute;
+    top: 18%;
+  }
+  .containerform {
+    width: 45vw;
+    height: 45vw;
+    margin: 8% 0 8% 10%;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0px 0 10px gray;
+  }
+  form {
+    width: 100%;
+    height: 100%;
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #form1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  #form2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+  #form3 input {
+    height: 8.5vw;
+    text-align: start;
+  }
+  .form {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    background-color: #dfe8e7;
+    border: none;
+    padding-left: 15px;
+  }
+  button {
+    background-color: #202328;
+    color: #ffffff;
+    width: 60%;
+    height: 50px;
+    font-size: 1.1em;
+    align-self: center;
+    margin-top: 20px;
+  }
+  .containercontact {
+    width: 35vw;
+    height: 50vw;
+    position: relative;
+    bottom: -5vw;
+  }
+  .info {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 10%;
+    height: 25vw;
+  }
+  .info ul {
+    list-style-type: none;
+    font-size: 1em;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .info li {
+    padding-top: 10px;
+  }
+  .info h3 {
+    color: #9DF9E8;
+    font-size: 1.5em;
+  }
+  .map {
+    width: 100%;
+    height: 25vw;
+    box-shadow: 0px 0 10px gray;
+  }
+  .carte {
+    width: 100%;
+    height: 100%;
   }
 }
