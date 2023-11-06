@@ -15,7 +15,7 @@
             <th>E-mail</th>
             <th>Téléphone</th>
             <th>Sujet</th>
-            <th>Message</th>
+            <th>Etat</th>
             <th>Action</th>      
         </tr>
     </thead>
@@ -27,7 +27,11 @@
                 <td>{{email}}</td>
                 <td>{{phone}}</td>
                 <td>{{subject}}</td>
-                <td>{{message}}</td>
+                <td>{{view}}</td>
+                <td>
+                <a href="readContact/{{id}}">Lire</a>
+                <a href="/delete/?id={{id}}">Supprimer</a>
+                </td>
             </tr>
         {{/contact}}    
     </tbody>

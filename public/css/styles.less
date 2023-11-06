@@ -19,38 +19,47 @@ nav {
     box-shadow: 10px 0 10px gray;
     color: @color-black;
 
-
-    .navname {
+    .navDesktop {
+        width: 100%;
         display: flex;
-        align-items: center;
-        justify-items: start;
-        font-size: large;
-        width: 30%;
-    }
-
-    .containerlien {
-        display: flex;
-        align-items: center;
         justify-content: space-around;
-        height: 70px;
+
+
+        .navname {
+            display: flex;
+            align-items: center;
+            justify-items: start;
+            font-size: large;
+            width: 30%;
+        }
+
+        .containerlien {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 70px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+
+        .spaceNav {
+            border-right: solid 1px;
+        }
+
+        a {
+            margin: 0px 20px 0px 20px;
+        }
     }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        list-style-type: none;
+    .navMobile {
+        display: none;
     }
-
-
-    .spaceNav {
-        border-right: solid 1px;
-    }
-
-    a {
-        margin: 0px 20px 0px 20px;
-    }
-
 }
 
 
@@ -331,20 +340,20 @@ section {
     font-size: 1.5em;
 
 
-}
 
-ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding-top: 20px;
 
-    a {
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        padding-top: 20px;
 
-        color: black;
+        a {
+
+            color: black;
+        }
     }
 }
-
 
 // CONTACT 
 
@@ -828,7 +837,13 @@ h4 {
 }
 
 @media screen and (max-width: 780px) {
-
+    nav {
+        ul {
+            li {
+                font-size: 0.8em;
+            }
+        }
+    }
 
     .containercard {
 
@@ -881,9 +896,7 @@ h4 {
 }
 
 @media screen and (max-width: 480px) {
-    .navDesktop {
-        display: none;
-    }
+
 
     // FOOTER 
 
@@ -1153,15 +1166,15 @@ h4 {
         display: flex;
         justify-content: center;
         font-size: 1em;
-    }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        padding-top: 20px;
-    }
 
+        ul {
+            display: flex;
+
+            list-style-type: none;
+            padding-top: 20px;
+        }
+    }
 
     // CONTACT 
 
@@ -1382,63 +1395,105 @@ h4 {
         display: flex;
         justify-content: end;
         height: 0;
-    }
 
-    #burger-menu {
-        width: 50px;
-        height: 50px;
-        position: relative;
-        z-index: 10;
-        overflow: hidden;
-        top: 50px;
-        right: 30px;
-        border-radius: 50%;
-        border: solid 1px @color1;
 
-        span {
-            width: 30px;
-            height: 4px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 4px;
-            transform: translate(-50%, -50%);
-            background-color: @color1;
-            transition: all 0.3s ease-in-out;
+        .navDesktop {
+            display: none;
+        }
+
+        .navMobile {
+            width: 100%;
+            display: flex;
+
+
+
+            #burger-menu {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                z-index: 10;
+
+                top: 50px;
+                right: 30px;
+                border-radius: 50%;
+                border: solid 1px @color1;
+
+                span {
+                    width: 30px;
+                    height: 4px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 4px;
+                    transform: translate(-50%, -50%);
+                    background-color: @color1;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            #burger-menu span:nth-of-type(2) {
+                top: calc(50% - 9px);
+            }
+
+            #burger-menu span:nth-of-type(3) {
+                top: calc(50% + 9px);
+            }
+
+            #menu {
+                width: 100%;
+                height: 767px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-image: url(../images/burger/fond.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                z-index: 9;
+                position: absolute;
+                top: -800px;
+                right: 0;
+                padding-top: 150px;
+                transition: all 0.3s ease-in-out;
+                color: @color1;
+
+                h1 {
+                    font-size: 3em;
+                }
+
+                #spaceMenu{
+                    width: 30%;
+                    height: 5px;
+                    background-color: @color5;
+                }
+                ul {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    list-style-type: none;
+
+                    li {
+                        padding-top: 50px;
+                        font-size: 1.2em;
+                    }
+
+                    a {
+
+                        color: white;
+                    }
+                }
+
+            }
+
+            #menu.active {
+                top: 0;
+                right: 0;
+
+
+            }
+
         }
     }
 
-    #burger-menu span:nth-of-type(2) {
-        top: calc(50% - 9px);
-    }
-
-    #burger-menu span:nth-of-type(3) {
-        top: calc(50% + 9px);
-    }
-
-    #menu {
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        right: 0;
-        visibility: hidden;
-        opacity: 0;
-        padding-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: all 0.3s ease-in-out;
-    }
-    #menu.active{
-        background-image: url(../images/burger/fond.jpg);
-        visibility: visible;
-        opacity: 1;
-        padding-top:50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        color: white;
-    }
 }

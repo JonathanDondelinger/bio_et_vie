@@ -71,7 +71,17 @@ class Routes {
             'function' => 'fetchApi',
             'path' => '/test'
         ] */
+        'readContact' => [
+            'controller' => 'ReadContactController',
+            'function' => 'boContact',
+            'path' => '/readContact/{id}'
+        ],
 
+        'delete' => [
+            'controller' => 'DeleteController',
+            'function' => 'delete',
+            'path' => '/delete'
+        ]
     ];
 
 }

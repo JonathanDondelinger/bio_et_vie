@@ -19,14 +19,23 @@
             <span></span>
             <span></span>
         </div>
-    </div>
-    <div id="menu">
-        <ul>
-            <li><span><a href="/">ACCUEIL</a></li>
-            <li><span><a href="/#categories">NOS PROFESSIONNELS</a></li>
-            <li><span><a href="/contact">CONTACTEZ-NOUS</a></li>
-        </ul>
-    </div>
     
+        <div id="menu">
+            <h1>BIO&VIE</h1>
+            <div id="spaceMenu"></div>
+            <ul>
+                <li><a href="/">ACCUEIL</a></li>
+                <li><a href="/#categories">NOS PROFESSIONNELS</a></li>
+                <li><a href="/contact">CONTACTEZ-NOUS</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let burgerMenu = document.getElementById('burger-menu');
+        let overlay = document.getElementById('menu');
+        burgerMenu.addEventListener('click', function () {
+            overlay.classList.toggle("active");
+        });
+    </script>
 </nav>
 
