@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    {{>header}}
+
 <body>
-    <h1>Conexion</h1>
-    <div class="">
-    <div class="">
-    <ul>
-    {{#errors}}
-    <li>{{.}}</li>
-    {{/errors}}
-    </ul>
-        <form method="post" action="/connection">
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div>
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password">
-            </div>
-            <button type="submit">Connexion</button>
-        </form>
-    </div>
-</div>
     
+    <div class="contFormulaireBo">
+        <h1>CONNEXION</h1>
+        <ul>
+            {{#errors}}
+            <li>{{.}}</li>
+            {{/errors}}
+        </ul>
+        <div class="formulaireBo">
+            <form method="post" action="/connection">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+    </div>   
 </body>
 </html>

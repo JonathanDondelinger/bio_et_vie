@@ -5,22 +5,25 @@ namespace App\Controller;
 use App\Model\BoContactModel;
 
 
-class DeleteController extends BaseController{
-    public function delete($id){
+class DeleteController extends BaseController
+{
+    public function delete($id)
+    {
 
         $model = new BoContactModel();
 
-        $id = $model->getMessage($id);
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
 
-        var_dump($id);
+            $test = $model->getMessage();
 
-        if(isset($_GET['id'])){
-                                       
-        $model->deleteMessage($id);
 
-        header("Location: /boContact"); 
-        exit;
+            if (!$test) {
+                header('Location: /boContact');
+            }
+            $delete = $model->deleteMessage($id);
+        } else {
+            header('Location: /boContact');
         }
-
     }
 }
+ 

@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{{>header}}
 <body>
     <h1>ADMINISTRATION</h1>
-    <section>
+<div id="sectionBo">
+    <div class="boCard">
         <h2>Utilisateur</h2>
+        <p>{{user}} inscrit</p>
         <a href="boUser">Gérer</a>
-    </section>
-    <section>
-        <h2>Catalogue Professionnel</h2>
+    </div>
+
+    <div class="boCard">
+        <h2>Catalogue</h2>
+        <h2>Professionnel</h2>
+        <p>{{professional}} inscrit</p>
         <a href='boProfessional'>Gérer catalogue</a>
-    </section>
-    <section>
+    </div>
+
+    <div class="boCard">
+        <div id="nbcontact">
         <h2>Méssage</h2>
+        <p>{{contact}} Non-lu</p>
+        </div>
         <a href="boContact">Gérer message</a>
-    </section>
+    </div>
+</div>
 </body>
 </html>

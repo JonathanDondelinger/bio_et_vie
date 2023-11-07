@@ -12,21 +12,13 @@ class BoContactController extends BaseController
         $model = new BoContactModel();
 
         $contact = $model->getMessage();
-        var_dump($contact['id']);
 
-        $id = $contact['id'];
-
-        if (isset($_GET['id'])) {
-            $id = (int)$_GET['id'];
-        }
-
-        if ($id > 0) {
-
-            $model->deleteMessage($id);
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $id = (int)strip_tags($_GET['id']);
+        
+        $delete = $model->deleteMessage($id);
 
         }
-
-
         echo $this->mustache->render('boContact', [
             'contact' => $contact,
 

@@ -8,7 +8,7 @@ use \PDO;
 class BackOfficeModel extends BaseModel{
 
     public function getMessage(){
-           $query = "SELECT * FROM contact_message ORDER BY id; DESC LIMIT 5";
+           $query = "SELECT 'view' FROM contact_message WHERE view = 0";
            $statement = $this->pdo->prepare($query);
            $statement->execute();
            $result1 = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -16,7 +16,7 @@ class BackOfficeModel extends BaseModel{
     }
 
     public function getUser(){
-            $query = "SELECT * FROM user ORDER BY id; DESC LIMIT 5";
+            $query = "SELECT id FROM user ";
             $statement = $this->pdo->prepare($query);
             $statement->execute();
             $result2 = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -24,10 +24,10 @@ class BackOfficeModel extends BaseModel{
     }
 
     public function getProfessional(){
-            $query = "SELECT * FROM professional ORDER BY id; DESC LIMIT 10";
+            $query = "SELECT COUNT(id) AS nbProfessional FROM professional ";
             $statement = $this->pdo->prepare($query);
             $statement->execute();
-            $result3 = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $result3;
+            $professional = $statement->fetch(PDO::FETCH_ASSOC);
+            return $professional;
     }
 }

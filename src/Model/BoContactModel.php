@@ -19,7 +19,7 @@ class BoContactModel extends BaseModel
     {
         $query = "DELETE FROM contact_message WHERE id = :id";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue('id', $id, PDO::PARAM_INT);
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 }

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contFormulaireBo {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 500px;
+  margin-top: 10%;
+  margin-left: 35%;
+  padding: 50px;
+  background-color: #202328;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+}
+.formulaireBo form {
+  width: 100%;
+}
+.formulaireBo form label {
+  padding: 3px 0;
+  display: block;
+  font-weight: bold;
+}
+.formulaireBo form input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #9DF9E8;
+  box-sizing: border-box;
+}
+.formulaireBo form button[type=submit] {
+  background-color: #9DF9E8;
+  color: #1c383c;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid #9DF9E8;
+}
+.formulaireBo form button[type=submit]:hover {
+  background-color: white;
+  color: #1c383c;
+  border: 1px solid #9DF9E8;
+}
+body h1 {
+  margin-top: 100px;
+  text-align: center;
+}
+#sectionBo {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+#sectionBo .boCard {
+  width: 20%;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 5%;
+  background-color: #202328;
+  color: #9DF9E8;
+}
+#sectionBo .boCard p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+#sectionBo .boCard a {
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #36605f;
+  color: white;
+}
+table {
+  table-layout: fixed;
+  width: 90%;
+  border-collapse: collapse;
+  border: 2px solid black;
+  text-align: center;
+  margin-left: 5%;
+  font-size: 1em;
+  padding: 20px;
+}
+table thead {
+  border: 2px solid black;
+}
+table thead tr {
+  padding: 20px;
+}
+table thead td {
+  padding: 20px;
+}
+table tbody td {
+  border-collapse: collapse;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid black;
+}
