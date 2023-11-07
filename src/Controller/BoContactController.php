@@ -13,12 +13,16 @@ class BoContactController extends BaseController
 
         $contact = $model->getMessage();
 
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
-            $id = (int)strip_tags($_GET['id']);
-        
-        $delete = $model->deleteMessage($id);
-
+       
+        foreach($contact as &$view){
+            if($view['view'] == 1){
+                $view['view'] = "lu";
+        }else{
+            $view['view'] = "Non-lu";
         }
+        
+        }
+
         echo $this->mustache->render('boContact', [
             'contact' => $contact,
 

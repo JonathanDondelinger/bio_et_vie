@@ -80,7 +80,7 @@ class Routes {
         'delete' => [
             'controller' => 'DeleteController',
             'function' => 'delete',
-            'path' => '/delete'
+            'path' => '/delete/{id}'
         ]
     ];
 

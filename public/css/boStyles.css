@@ -80,6 +80,22 @@ body h1 {
   background-color: #36605f;
   color: white;
 }
+#contenairRead {
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 25%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  align-items: center;
+}
+#contenairRead h1 {
+  margin-top: 20px;
+}
+#contenairRead p {
+  margin: 50px;
+}
 table {
   table-layout: fixed;
   width: 90%;

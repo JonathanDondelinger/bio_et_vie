@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\BoContactModel;
+use App\Model\DeleteModel;
 
 
 class DeleteController extends BaseController
@@ -10,20 +10,19 @@ class DeleteController extends BaseController
     public function delete($id)
     {
 
-        $model = new BoContactModel();
+        $model = new DeleteModel();
 
         if (isset($_GET['id']) && !empty($_GET['id'])) {
 
-            $test = $model->getMessage();
+            $id = (int)strip_tags($_GET['id']);
 
+            
+            header('Location: /boContact');
 
-            if (!$test) {
-                header('Location: /boContact');
-            }
-            $delete = $model->deleteMessage($id);
+            $model->deleteMessage($id);
+
         } else {
             header('Location: /boContact');
         }
     }
 }
- 

@@ -2,18 +2,20 @@
 
 namespace App\Controller;
 
-use App\Model\BoContactModel;
+use App\Model\ReadContactModel;
 
 class ReadContactController extends BaseController{
-    public function boContact(){
+    public function boContact($id){
         
-        $model = new BoContactModel();
+        $model = new ReadContactModel();
 
-        $contact = $model->getMessage();
+        $message = $model->getMessage($id);
+
+        $view = $model->viewOk($id);
         
-        
+
         echo $this->mustache->render('readContact', [
-            'contact' => $contact
+            'message' => $message
         ]);
     }
 }
