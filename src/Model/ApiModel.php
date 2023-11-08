@@ -15,15 +15,15 @@ class ApiModel extends BaseModel {
         $statement->bindParam(':denominationcourante', $denominationcourante);
         $statement->bindParam(':siret', $siret);
         $statement->bindParam(':numeroBio', $numeroBio);
-        $statement->bindParam(':gerant', $gerant);
         $statement->bindParam(':telephone', $telephone);
-        $statement->bindParam(':telephoneCommerciale', $telephoneCommerciale);
         $statement->bindParam(':email', $email);
-        $statement->bindParam(':dateMaj', $dateMaj);
         $statement->bindParam(':codeNAF', $codeNAF);
+        $statement->bindParam(':gerant', $gerant);
+        $statement->bindParam(':dateMaj', $dateMaj);
+        $statement->bindParam(':telephoneCommerciale', $telephoneCommerciale);
         $statement->bindParam(':reseau', $reseau);
-        $statement->bindParam(':adressesOperateurs', $adressesOperateurs);
-        $statement->bindParam(':sitesWeb', $sitesWeb);   
+        $statement->bindParam(':sitesWeb', $sitesWeb); 
+        $statement->bindParam(':adressesOperateurs', $adressesOperateurs);    
         $statement->bindParam(':productions', $productions);
         $statement->bindParam(':certificats', $certificats);
         $statement->bindParam(':mixite', $mixite);
@@ -33,22 +33,22 @@ class ApiModel extends BaseModel {
         return $this->pdo->lastInsertId();
     }
    
-    public function findActivity($id_api){
+    public function findActivity($id_activity_api){
 
-        $query = "SELECT id, id_api FROM activity WHERE id_api = :id_api";
+        $query = "SELECT id_activity, id_activity_api FROM activity WHERE id_activity_api = :id_activity_api";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':id_api', $id_api);
+        $statement->bindParam(':id_activity_api', $id_activity_api);
         $statement->execute();
         $activity = $statement->fetch(PDO::FETCH_ASSOC);
         return $activity;
     }
 
-    public function addActivity( $id_api, $nom){
+    public function addActivity( $id_activity_api, $activity_name){
 
-        $query = "INSERT INTO activity (id_api, nom) VALUES (:id_api, :nom)";
+        $query = "INSERT INTO activity (id_activity_api, activity_name) VALUES (:id_activity_api, :activity_name)";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':id_api', $id_api);
-        $statement->bindParam(':nom', $nom);
+        $statement->bindParam(':id_activity_api', $id_activity_api);
+        $statement->bindParam(':activity_name', $activity_name);
         $statement->execute();
         return $this->pdo->lastInsertId();
     }
@@ -62,21 +62,21 @@ class ApiModel extends BaseModel {
         $statement->execute();
     }
     
-    public function findCategory($id_api){
+    public function findCategory($id_category_api){
 
-        $query = "SELECT id, id_api FROM category WHERE id_api = :id_api";
+        $query = "SELECT id, id_category_api FROM category WHERE id_category_api = :id_category_api";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':id_api', $id_api);
+        $statement->bindParam(':id_category_api', $id_category_api);
         $statement->execute();
         $category = $statement->fetch(PDO::FETCH_ASSOC);
         return $category;
     }
 
-    public function addCategory($id_api, $nom){
-        $query = "INSERT INTO category (id_api, nom) VALUES (:id_api, :nom)";
+    public function addCategory($id_category_api, $category_name){
+        $query = "INSERT INTO category (id_category_api, nom) VALUES (:id_category_api, :category_name)";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':id_api', $id_api);
-        $statement->bindParam(':nom', $nom);
+        $statement->bindParam(':id_category_api', $id_category_api);
+        $statement->bindParam(':category_name', $category_name);
         $statement->execute();
         return $this->pdo->lastInsertId();
     }

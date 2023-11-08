@@ -66,22 +66,30 @@ class Routes {
             'function' => 'boContact',
             'path' => '/boContact'
         ],
+
        /*  'api' => [
             'controller' => 'ApiController',
             'function' => 'fetchApi',
             'path' => '/test'
         ] */
+
         'readContact' => [
             'controller' => 'ReadContactController',
             'function' => 'boContact',
             'path' => '/readContact/{id}'
         ],
 
-        'delete' => [
-            'controller' => 'DeleteController',
-            'function' => 'delete',
-            'path' => '/delete/{id}'
+        'deleteContact' => [
+            'controller' => 'DeleteContactController',
+            'function' => 'deleteContact',
+            'path' => '/deleteContact/{id}'
+        ],
+
+        'deleteUser' => [
+            'controller' => 'DeleteUserController',
+            'function' => 'deleteUser',
+            'path' => '/deleteUser/{id}'
         ]
-    ];
+    ];  
 
 }

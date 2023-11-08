@@ -10,8 +10,8 @@ class BoUserController extends BaseController{
         $model = new BoUserModel();
 
         $user = $model->getUser();
-                
         
+
         echo $this->mustache->render('boUser', [
             'user' => $user
         ]);

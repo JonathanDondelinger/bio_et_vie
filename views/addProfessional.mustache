@@ -1,67 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{{>header}}
 <body>
-    <form method="post" action="">
-    <label for="">id api</label>
-    <input type="number" name="id_api">
+    <div id="formPro">
+        <form method="post" action="/addProfessional">
+        <label for="id_api">id api</label>
+        <input type="number" name="id_api">
 
-    <label for="">Raison Sociale</label>
-    <input type="text" name="raisonSociale">
+        <label for="raisonSociale">Raison Sociale</label>
+        <input type="text" name="raisonSociale">
 
-    <label for="">Dénomination courante</label>
-    <input type="text" name="denominationcourante">
+        <label for="denominationcourante">Dénomination courante</label>
+        <input type="text" name="denominationcourante">
 
-    <label for="">Siret</label>
-    <input type="text" name="siret">
+        <label for="siret">Siret</label>
+        <input type="text" name="siret">
 
-    <label for="">Numero Bio</label>
-    <input type="number" name="numeroBio">
+        <label for="numeroBio">Numero Bio</label>
+        <input type="number" name="numeroBio">
 
-    <label for="">Telephone</label>
-    <input type="tel" name="telephone">
+        <label for="telephone">Telephone</label>
+        <input type="tel" name="telephone">
 
-    <label for="">E-mail</label>
-    <input type="email" name="email">
+        <label for="email">E-mail</label>
+        <input type="email" name="email">
 
-    <label for="">Code Naf</label>
-    <input type="text" name="codeNAF">
+        <label for="codeNAF">Code Naf</label>
+        <input type="text" name="codeNAF">
 
-    <label for="">Gerant</label>
-    <input type="text" name="gerant">
+        <label for="gerant">Gerant</label>
+        <input type="text" name="gerant">
 
-    <label for="">Date Maj</label>
-    <input type="text" name="dateMaj">
+        <label for="dateMaj">Date Maj</label>
+        <input type="text" name="dateMaj">
 
-    <label for="">Telephone Commerciale</label>
-    <input type="tel" name="telephoneCommerciale">
+        <label for="telephoneCommerciale">Telephone Commerciale</label>
+        <input type="tel" name="telephoneCommerciale">
 
-    <label for="">Reseau</label>
-    <input type="text" name="reseau">
+        <label for="reseau">Reseau</label>
+        <input type="text" name="reseau">
 
-    <label for="">Sites Web</label>
-    <input type="text" name="sitesWeb">
+        <label for="sitesWeb">Sites Web</label>
+        <input type="text" name="sitesWeb">
 
-    <label for="">Adresses Operateurs</label>
-    <input type="text" name="adressesOperateurs">
+        <label for="adressesOperateurs">Adresses Operateurs</label>
+        <input type="text" name="adressesOperateurs">
 
-    <label for="">Productions</label>
-    <input type="text" name="productions">
+        <label for="productions">Productions</label>
+        <input type="text" name="productions">
 
-    <label for="">Certificats</label>
-    <input type="text" name="certificats">
+        <label for="certificats">Certificats</label>
+        <input type="text" name="certificats">
 
-    <label for="">Mixite</label>
-    <input type="text" name="mixite">
+        <label for="mixite">Mixite</label>
+        <input type="text" name="mixite">
 
-    <label for="">ProfessionalCol</label>
-    <input type="text" name="Professionalcol">
-    </form>
+        <label for="category_name">Categorie :</label>
+            <select name="category_name" ">
+                <option value=""> --- </option>
+                <option value="Artisans/commerçants">Artisans/commerçants</option>
+                <option value="Grossistes">Grossistes</option>
+                <option value="Vente aux consommateurs">Vente aux consommateurs</option>
+                <option value="Magasins spécialisés">Magasins spécialisés</option>
+                <option value="Grandes surfaces généralistes">Grandes surfaces généralistes</option>
+                <option value="Restaurants">Restaurants</option>
+            </select>
+        <label for="activity_name">Activité :</label>
+            <select name="activity_name" ">
+                <option value=""> --- </option>
+                <option value="Production">Production</option>
+                <option value="Préparation">Préparation</option>
+                <option value="Distribution">Distribution</option>
+                <option value="Importation">Importation</option>
+                <option value="Stockage">Stockage</option>
+                <option value="Restauration">Restauration</option>
+                <option value="Transport">Transport</option>
+                <option value="Exportation">Exportation</option>
+            </select>
+            <button type="submit">Valider</button>
+        </form>
 
-    <button type="submit">Valider</button>
+        
+    </div>
 </body>
 </html>

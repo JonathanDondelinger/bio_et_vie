@@ -15,7 +15,17 @@ class AddUserModel extends BaseModel{
         $statement->execute();
         return $this->pdo->lastInsertId();
     }
-  
+    
+    public function findRole($slug){
+
+        $query = "SELECT * FROM role WHERE slug = :slug";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':slug', $slug);
+        $statement->execute();
+        $role = $statement->fetch(PDO::FETCH_ASSOC);
+        return $role;
+    }
+
     public function addRole($slug, $display_name){
 
         $query = "INSERT INTO role (slug, display_name) VALUES (:slug, :display_name)";

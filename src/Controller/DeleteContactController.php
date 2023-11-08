@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Model\DeleteModel;
+use App\Model\DeleteContactModel;
 
 
-class DeleteController extends BaseController
+class DeleteContactController extends BaseController
 {
-    public function delete($id)
+    public function deleteContact($id)
     {
 
-        $model = new DeleteModel();
+        $model = new DeleteContactModel();
 
         if (isset($_GET['id']) && !empty($_GET['id'])) {
 

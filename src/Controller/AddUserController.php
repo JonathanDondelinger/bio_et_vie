@@ -10,9 +10,8 @@ class AddUserController extends BaseController
     public function addUser()
     {
 
-        $user = [];
         $errors = [];
-        $role = [];
+
         if ($_POST) {
             if (
                 isset($_POST['name']) && !empty($_POST['name'])
@@ -23,8 +22,6 @@ class AddUserController extends BaseController
 
             ) {
 
-                
-
                 $name = strip_tags($_POST['name']);
                 $password = password_hash($_POST["password"], PASSWORD_ARGON2ID);
                 $email = strip_tags($_POST['email']);
@@ -33,15 +30,20 @@ class AddUserController extends BaseController
 
                 $model = new addUserModel();
 
-                $userId = $model->AddUser($name, $password, $email);
+                $user_id = $model->AddUser($name, $password, $email);
 
-                if ($userId) {
-                    $roleId = $model->addRole($slug, $display_name);
+                $role = $model->findRole($slug);
+                
+                if (empty($role)) {
 
-                    if ($roleId) {
-                        $model->userRole($roleId, $userId);   
-                    }
+                    $role_id = $model->addRole($slug, $display_name);
+                } else {
+                    $role_id = $role['id_role'];
+                    
                 }
+                
+                $model->userRole($role_id, $user_id);
+
             } else {
                 $errors[] = 'Erreur';
             };
@@ -50,7 +52,7 @@ class AddUserController extends BaseController
 
 
         echo $this->mustache->render('addUser', [
-            
+
             'errors' => $errors
         ]);
     }

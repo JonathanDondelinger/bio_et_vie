@@ -76,22 +76,22 @@ class ApiController extends BaseController
                
                 $api = $item->api = (1);
 
-                $professionalId = $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5, $api);
+                $professional_id = $model->addapi($item->id, $item->raisonSociale, $item->denominationcourante, $item->siret, $item->numeroBio, $item->telephone, $item->email, $item->codeNAF, $item->gerant, $item->dateMaj, $item->telephoneCommerciale, $item->reseau, $string1, $string2, $string3, $string4, $string5, $api);
 
                 foreach($activites as $activite){
                     
                     $activity = $model->findActivity($activite->id, $activite->nom);
 
                     if(empty($activity)){
-                        $id_api = $activite->id;
+                        $id_activity_api = $activite->id;
                         $nom = $activite->nom;
-                        $activity_id = $model->addActivity($id_api, $nom); 
+                        $activity_id = $model->addActivity($id_activity_api, $nom); 
                     }else{
                         $activity_id = $activity['id'];
                       
                     }
                     // table de jointure activity
-                    $model->proActivity($professionalId, $activity_id);
+                    $model->proActivity($professional_id, $activity_id);
                    
                 } 
                 foreach($categories as $categorie){
@@ -107,7 +107,7 @@ class ApiController extends BaseController
                         $category_id = $category['id'];
                     }
                     // table de jointure category
-                    $model->proCategory($professionalId, $category_id);
+                    $model->proCategory($professional_id, $category_id);
              
  
                 }
