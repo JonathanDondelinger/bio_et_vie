@@ -11,10 +11,13 @@ class BoUserController extends BaseController{
 
         $user = $model->getUser();
         
-        
+        $userRole = $_SESSION['user']['role'];
+
+        $superAdmin = ($userRole === 'super_admin');
 
         echo $this->mustache->render('boUser', [
-            'user' => $user
+            'user' => $user,
+            'superAdmin' => $superAdmin
         ]);
     }
 }

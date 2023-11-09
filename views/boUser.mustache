@@ -9,7 +9,9 @@
             <th>Password</th>
             <th>E-mail</th>
             <th>Role</th>
+            {{#superAdmin}}
             <th>Action</th>  
+            {{/superAdmin}}
         </tr>
     </thead>
     <tbody>
@@ -19,7 +21,9 @@
                 <td>{{password}}</td>
                 <td>{{email}}</td>
                 <td>{{display_name}}</td>
+                {{#superAdmin}}
                 <td><a href="/deleteUser/?id={{id}}">Supprimer</a></td>
+                {{/superAdmin}}
             </tr>
         {{/user}}    
     </tbody>

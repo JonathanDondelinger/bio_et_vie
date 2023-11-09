@@ -1,6 +1,7 @@
 {{>header}}
 <body>
     <h1>ADMINISTRATION</h1>
+    <h1>Bonjour : {{userRole}} {{userName}}</h1>
 <div id="sectionBo">
     <div class="boCard">
         <h2>Utilisateur</h2>
@@ -14,7 +15,7 @@
         <p>{{professional}} inscrit</p>
         <a href='boProfessional'>Gérer catalogue</a>
     </div>
-
+{{#superAdmin}}
     <div class="boCard">
         <div id="nbcontact">
         <h2>Méssage</h2>
@@ -22,6 +23,7 @@
         </div>
         <a href="boContact">Gérer message</a>
     </div>
+{{/superAdmin}}
 </div>
 </body>
 </html>

@@ -24,7 +24,9 @@ class ConnectionController extends BaseController
             if(!empty($user)){
                 if(password_verify( $password,  $user['password'])){
                     $_SESSION['user'] = [
-                        "id" => $user['id']
+                        "id" => $user['id'],
+                        "name" => $user['name'],
+                        "role" => $user['slug']
                     ];
 
                     header("location: /backOffice");
@@ -34,6 +36,10 @@ class ConnectionController extends BaseController
             }else{
                 $errors[] = 'email incorect';
             }
+
+            
+
+
         }   
         echo $this->mustache->render('connection', [
             'user' => $user,

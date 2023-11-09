@@ -13,7 +13,6 @@ class BoContactController extends BaseController
 
         $contact = $model->getMessage();
 
-       
         foreach($contact as &$view){
             if($view['view'] == 1){
                 $view['view'] = "lu";
@@ -25,7 +24,7 @@ class BoContactController extends BaseController
 
         echo $this->mustache->render('boContact', [
             'contact' => $contact,
-
+            
         ]);
     }
 }

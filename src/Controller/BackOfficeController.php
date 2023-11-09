@@ -20,11 +20,22 @@ class BackOfficeController extends BaseController{
         $user = $model->getUser();
 
         $nbUser = count($user);
+        
+        $userRole = $_SESSION['user']['role'];
+
+        $userName = $_SESSION['user']['name'];
+
+        var_dump($userName);
+
+        $superAdmin = ($userRole === 'super_admin');
 
         echo $this->mustache->render('backOffice', [
             'contact' => $nbContact,
             'user' => $nbUser,
-            'professional' => $nbProfessional
+            'professional' => $nbProfessional,
+            'superAdmin' => $superAdmin,
+            'userName' => $userName,
+            'userRole' => $userRole
         ]);
     }
 }

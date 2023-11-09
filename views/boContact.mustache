@@ -24,7 +24,9 @@
                 <td>{{view}}</td>
                 <td>
                 <a href="readContact/{{id}}">Lire</a>
+                {{#superAdmin}}
                 <a href="/deleteContact/?id={{id}}">Supprimer</a>
+                {{/superAdmin}}
                 </td>
             </tr>
         {{/contact}}    
