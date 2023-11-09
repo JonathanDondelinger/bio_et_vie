@@ -15,11 +15,4 @@ class DeleteContactModel extends BaseModel
         $statement->execute();
     }
 
-    public function deleteUser($id)
-    {
-        $query = "DELETE FROM user WHERE id = :id";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':id', $id, PDO::PARAM_INT);
-        $statement->execute();
-    }
 }

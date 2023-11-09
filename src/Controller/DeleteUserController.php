@@ -16,13 +16,17 @@ class DeleteUserController extends BaseController
 
             $id = (int)strip_tags($_GET['id']);
 
-            
-            /* header('Location: /boUser'); */
+        
+            header('Location: /boUser');
+
+            $model->deleteUser_Role($id);
 
             $model->deleteUser($id);
 
+
+
         } else {
-            /* header('Location: /boUser'); */
+            header('Location: /boUser');
         }
     }
 }

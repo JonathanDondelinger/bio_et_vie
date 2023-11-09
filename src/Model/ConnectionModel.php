@@ -9,7 +9,7 @@ class ConnectionModel extends BaseModel
 
     public function getUser($email)
     {
-        $query = "SELECT * FROM user WHERE email = :email";
+        $query = "SELECT * FROM user LEFT JOIN user_role ON user_role.user_id = user.id LEFT JOIN role ON role.id_role = user_role.role_id WHERE email = :email";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(":email", $email, PDO::PARAM_STR);
         $statement->execute();

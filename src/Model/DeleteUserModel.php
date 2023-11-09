@@ -14,18 +14,12 @@ class DeleteUserModel extends BaseModel
         $statement->bindValue(':id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
-    public function deleteRole($id)
-    {
-        $query = "DELETE FROM user WHERE id = :id";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':id', $id, PDO::PARAM_INT);
-        $statement->execute();
-    }
+
     public function deleteUser_Role($id)
     {
-        $query = "DELETE FROM user WHERE id = :id";
+        $query = "DELETE FROM user_role WHERE user_id = :user_id";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->bindValue(':user_id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 }

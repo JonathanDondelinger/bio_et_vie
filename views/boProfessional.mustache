@@ -26,6 +26,9 @@
                 <td>{{gerant}}</td>
                 <td>{{telephoneCommerciale}}</td>
                 <td>{{sitesWeb}}</td>
+                {{^api}}
+                    <td><a href="/deletePro/?id={{id}}">Supprimer</a></td>
+                {{/api}}
             </tr>
         {{/professionals}}    
     </tbody>

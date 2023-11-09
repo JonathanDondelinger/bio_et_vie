@@ -35,7 +35,7 @@ class AddProModel extends BaseModel{
 
     public function findActivity($activity_name){
 
-        $query = "SELECT * FROM activity WHERE $activity_name = :activity_name";
+        $query = "SELECT * FROM activity WHERE activity_name = :activity_name";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':activity_name', $activity_name);
         $statement->execute();

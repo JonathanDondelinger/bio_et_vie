@@ -89,6 +89,12 @@ class Routes {
             'controller' => 'DeleteUserController',
             'function' => 'deleteUser',
             'path' => '/deleteUser/{id}'
+        ],
+
+        'deletePro' => [
+            'controller' => 'DeleteProController',
+            'function' => 'deletePro',
+            'path' => '/deletePro/{id}'
         ]
     ];  
 
