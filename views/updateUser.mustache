@@ -1,6 +1,6 @@
 {{>header}}
 
- <h1>Nouvel utilisateur</h1>
+ <h1>Modifier utilisateur</h1>
 
     <div class="formUser">
         <ul>
@@ -8,37 +8,37 @@
         <li>{{.}}</li>
         {{/errors}}
         </ul>
-        <form method="post" action="/addUser">
+        <form method="post" action="/updateUser">
             <div>
                 <label for="name">Nom :</label>
-                <input type="text" name="name" >
-            </div>
-            <div>
-                <label for="password">Password :</label>
-                <input type="pass" name="password">
+                <input type="text" name="name" placeholder="{{user.name}}" >
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="email">
+                <input type="email" name="email" placeholder="{{user.email}}">
             </div>
+            
             <div>
                 <label for="slug">Slug:</label>
-                <select name="slug" ">
+                <select name="slug">
+                    <option value="{{user.slug}}">{{user.slug}}</option>
                     <option value="admin">admin</option>
                     <option value="super_admin">super_admin</option>
                 </select>
             </div>
             <div>
                 <label for="display_name">Rôle :</label>
-                <select name="display_name" ">
+                <select name="display_name">
+                    <option value="{{user.display_name}}">{{user.display_name}}</option>
                     <option value="Admin">Admin</option>
                     <option value="Super Admin">Super Admin</option>
                 </select>
             </div>
-            <button type="submit">Créer</button>
+            <button type="submit">Modifier</button>
         </form>
     </div>
+    
 
-<a href="boUser">Retour</a>
+<a href="/boUser">Retour</a>
 </body>
 </html>

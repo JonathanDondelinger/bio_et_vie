@@ -22,7 +22,10 @@
                 <td>{{email}}</td>
                 <td>{{display_name}}</td>
                 {{#superAdmin}}
-                <td><a href="/deleteUser/?id={{id}}">Supprimer</a></td>
+                <td>
+                    <a href="/updateUser/?id={{id}}">Modifier Admin</a>
+                    <a href="/deleteUser/?id={{id}}">Supprimer</a>
+                </td>
                 {{/superAdmin}}
             </tr>
         {{/user}}    

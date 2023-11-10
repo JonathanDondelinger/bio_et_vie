@@ -95,6 +95,12 @@ class Routes {
             'controller' => 'DeleteProController',
             'function' => 'deletePro',
             'path' => '/deletePro/{id}'
+        ],
+
+        'updateUser' => [
+            'controller' => 'UpdateUserController',
+            'function' => 'updateUser',
+            'path' => '/updateUser/{id}',
         ]
     ];  
 

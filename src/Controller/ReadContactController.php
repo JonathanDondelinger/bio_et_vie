@@ -11,7 +11,7 @@ class ReadContactController extends BaseController{
 
         $message = $model->getMessage($id);
 
-        $view = $model->viewOk($id);
+         $model->viewOk($id);
         
 
         echo $this->mustache->render('readContact', [

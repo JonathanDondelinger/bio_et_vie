@@ -22,10 +22,8 @@ class BackOfficeController extends BaseController{
         $nbUser = count($user);
         
         $userRole = $_SESSION['user']['role'];
-
+        
         $userName = $_SESSION['user']['name'];
-
-        var_dump($userName);
 
         $superAdmin = ($userRole === 'super_admin');
 
