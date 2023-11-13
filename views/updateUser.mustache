@@ -8,30 +8,22 @@
         <li>{{.}}</li>
         {{/errors}}
         </ul>
-        <form method="post" action="/updateUser">
+        <form method="post">
             <div>
                 <label for="name">Nom :</label>
-                <input type="text" name="name" placeholder="{{user.name}}" >
+                <input type="text" name="name" value="{{user.name}}" >
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="email" placeholder="{{user.email}}">
+                <input type="email" name="email" value="{{user.email}}">
             </div>
             
             <div>
-                <label for="slug">Slug:</label>
-                <select name="slug">
-                    <option value="{{user.slug}}">{{user.slug}}</option>
-                    <option value="admin">admin</option>
-                    <option value="super_admin">super_admin</option>
-                </select>
-            </div>
-            <div>
-                <label for="display_name">Rôle :</label>
-                <select name="display_name">
-                    <option value="{{user.display_name}}">{{user.display_name}}</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Super Admin">Super Admin</option>
+                <label for="role">Rôle :</label>
+                <select name="role">
+                    {{#roles}}
+                    <option value="{{id_role}}" {{selected}}>{{display_name}}</option>
+                    {{/roles}}
                 </select>
             </div>
             <button type="submit">Modifier</button>

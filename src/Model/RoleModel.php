@@ -4,25 +4,18 @@ namespace App\Model;
 
 use \PDO;
 
-class AddUserModel extends BaseModel{
 
-    public function AddUser($name, $password, $email){
-        $query ="INSERT INTO user (name, password, email) VALUE (:name, :password, :email)";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindValue(":name", $name, PDO::PARAM_STR); 
-        $statement->bindValue(":password", $password, PDO::PARAM_STR); 
-        $statement->bindValue(":email", $email, PDO::PARAM_STR); 
-        $statement->execute();
-        return $this->pdo->lastInsertId();
-    }
+class RoleModel extends BaseModel{
+
+   
     
-    public function findRole($slug){
+    public function getRoles(){
 
-        $query = "SELECT * FROM role WHERE slug = :slug";
+        $query = "SELECT * FROM role ";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':slug', $slug);
+        
         $statement->execute();
-        $role = $statement->fetch(PDO::FETCH_ASSOC);
+        $role = $statement->fetchall(PDO::FETCH_ASSOC);
         return $role;
     }
 
@@ -42,6 +35,15 @@ class AddUserModel extends BaseModel{
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':role_id', $role_id, PDO::PARAM_STR);
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+        $statement->execute();
+    }
+
+    public function updateUserRole($role_id, $user_id){
+
+        $query = "UPDATE user_role SET role_id = :role_id, user_id = :user_id WHERE user_id = :user_id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':role_id', $role_id, PDO::PARAM_INT);
+        $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->execute();
     } 
 }

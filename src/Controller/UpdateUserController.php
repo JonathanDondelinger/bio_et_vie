@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Model\UpdateUserModel;
+use App\Model\UserModel;
+use App\Model\RoleModel;
 
 class UpdateUserController extends BaseController
 {
@@ -11,45 +12,41 @@ class UpdateUserController extends BaseController
 
         $errors = [];
 
-        $model = new UpdateUserModel();
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $userModel = new UserModel();
+        $roleModel = new RoleModel();
 
-            $id = (int)strip_tags($_GET['id']);
-        }
+        $user = $userModel->getUser($id);
 
-        $user = $model->getUser($id);
+        $roles = []; 
 
-        var_dump($user);
+        $roles = $roleModel->getRoles();
+        /* var_dump($roles); */
+        foreach ($roles as &$role) {
+            if($role['id_role'] === $user['id_role']){
+                $selected = 'selected';
+            }else{
+                $selected = '';
+            }
+            $role['selected'] = $selected; 
+        };
 
         if ($_POST) {
+            
             if (
                 isset($_POST['name']) && !empty($_POST['name'])
                 && isset($_POST['email']) && !empty($_POST['email'])
+                && isset($_POST['role']) && !empty($_POST['role'])  
             ) {
+                var_dump('test');
                 $name = strip_tags($_POST['name']);
                 $email = strip_tags($_POST['email']);
+                $role_id = (int)$_POST['role'];
 
-                $model->updateUser($name, $email);
-            } else {
-                $errors[] = 'Erreur';
-            };
-            if (
-                isset($_POST['display_name']) && !empty($_POST['display_name'])
-                && isset($_POST['slug']) && !empty($_POST['slug'])
-            ) {
-                $slug = strip_tags($_POST['slug']);
+                $userModel->updateUser($id, $name, $email);
 
-                $role = $model->getRole($slug);
+                $roleModel->updateUserRole($role_id, $id);
 
-
-                if (empty($role)) {
-
-                    $role_id = $user['role_id'];
-                } else {
-                     $role_id = ($slug === 'super_admin') ? 2 : 1;
-
-                }
-                    $model->updateUserRole($role_id);
+                header ('Location: /boUser');
             } else {
                 $errors[] = 'Erreur';
             }
@@ -58,8 +55,8 @@ class UpdateUserController extends BaseController
 
 
         echo $this->mustache->render('updateUser', [
-            'errors' => $errors,
-            'user' => $user
+            'user' => $user,
+            'roles' => $roles
         ]);
     }
 }

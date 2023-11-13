@@ -19,9 +19,8 @@ class BoContactController extends BaseController
         }else{
             $view['view'] = "Non-lu";
         }
+        };
         
-        }
-
         echo $this->mustache->render('boContact', [
             'contact' => $contact,
             

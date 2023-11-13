@@ -12,21 +12,10 @@ class DeleteUserController extends BaseController
 
         $model = new DeleteUserModel();
 
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $model->deleteUser_Role($id);
 
-            $id = (int)strip_tags($_GET['id']);
+        $model->deleteUser($id);
 
-        
-            header('Location: /boUser');
-
-            $model->deleteUser_Role($id);
-
-            $model->deleteUser($id);
-
-
-
-        } else {
-            header('Location: /boUser');
-        }
+        header('Location: /boUser');
     }
 }

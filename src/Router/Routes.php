@@ -101,7 +101,15 @@ class Routes {
             'controller' => 'UpdateUserController',
             'function' => 'updateUser',
             'path' => '/updateUser/{id}',
+        ],
+
+        'forgetPassword' => [
+            'controller' => 'ForgetPasswordController',
+            'function' => 'forgetPassword',
+            'path' => '/forgetPassword'
         ]
+
+
     ];  
 
 }

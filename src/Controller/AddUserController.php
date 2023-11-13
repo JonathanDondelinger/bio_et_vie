@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-use App\Model\AddUserModel;
+use App\Model\UserModel;
+use App\Model\RoleModel;
+
 
 class AddUserController extends BaseController
 {
@@ -12,48 +14,36 @@ class AddUserController extends BaseController
 
         $errors = [];
 
+        $roleModel = new RoleModel();
+        $userModel = new UserModel();
+
+        $roles = $roleModel->getRoles();
+
         if ($_POST) {
             if (
                 isset($_POST['name']) && !empty($_POST['name'])
                 && isset($_POST['password']) && !empty($_POST['password'])
                 && isset($_POST['email']) && !empty($_POST['email'])
-                && isset($_POST['display_name']) && !empty($_POST['display_name'])
-                && isset($_POST['slug']) && !empty($_POST['slug'])
-
+                && isset($_POST['role']) && !empty($_POST['role']) 
             ) {
 
                 $name = strip_tags($_POST['name']);
                 $password = password_hash($_POST["password"], PASSWORD_ARGON2ID);
                 $email = strip_tags($_POST['email']);
-                $slug = strip_tags($_POST['slug']);
-                $display_name = strip_tags($_POST['display_name']);
-
-                $model = new addUserModel();
-
-                $user_id = $model->AddUser($name, $password, $email);
-
-                $role = $model->findRole($slug);
+                $role_id = (int)$_POST['role'];
                 
-                if (empty($role)) {
+                $user_id = $userModel->addUser($name, $password, $email);
 
-                    $role_id = $model->addRole($slug, $display_name);
-                } else {
-                    $role_id = $role['id_role'];
-                    
-                }
-                
-                $model->userRole($role_id, $user_id);
+                $roleModel->userRole($role_id, $user_id);
 
             } else {
                 $errors[] = 'Erreur';
             };
         }
 
-
-
         echo $this->mustache->render('addUser', [
-
-            'errors' => $errors
+            'errors' => $errors,
+            'roles' => $roles
         ]);
     }
 }

@@ -5,8 +5,12 @@ namespace App\Model;
 use \PDO;
 
 
-class UpdateUserModel extends BaseModel{
+class UserModel extends BaseModel{
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
     public function getUser($id){
         $query = "SELECT * FROM user LEFT JOIN user_role ON user_role.user_id = user.id LEFT JOIN role ON role.id_role = user_role.role_id WHERE id = :id";
         $statement = $this->pdo->prepare($query);
@@ -16,7 +20,17 @@ class UpdateUserModel extends BaseModel{
         return $result;
     }
 
-    public function updateUser($name, $email){
+    public function addUser($name, $password, $email){
+        $query ="INSERT INTO user (name, password, email) VALUE (:name, :password, :email)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":name", $name, PDO::PARAM_STR); 
+        $statement->bindValue(":password", $password, PDO::PARAM_STR); 
+        $statement->bindValue(":email", $email, PDO::PARAM_STR); 
+        $statement->execute();
+        return $this->pdo->lastInsertId();
+    }
+
+    public function updateUser($id, $name, $email){
         $query = "UPDATE user SET name = :name, email = :email WHERE id = :id ";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id', $id, PDO::PARAM_INT);
@@ -24,23 +38,5 @@ class UpdateUserModel extends BaseModel{
         $statement->bindParam(":email", $email, PDO::PARAM_STR); 
         $statement->execute();
         
-        
     }
-    public function getRole($slug){
-
-        $query = "SELECT * FROM role WHERE slug = :slug ";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':slug', $slug);
-        $statement->execute();
-        $role = $statement->fetchall(PDO::FETCH_ASSOC);
-        return $role;
-    }
-   
-    public function updateUserRole($role_id){
-
-        $query = "UPDATE user_role SET role_id = :role_id, WHERE user_id = :user_id";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':role_id', $role_id, PDO::PARAM_STR);
-        $statement->execute();
-    } 
 }

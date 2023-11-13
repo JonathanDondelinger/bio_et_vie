@@ -6,7 +6,6 @@
     <thead>
         <tr>
             <th>Nom</th>
-            <th>Password</th>
             <th>E-mail</th>
             <th>Role</th>
             {{#superAdmin}}
@@ -18,13 +17,12 @@
         {{#user}}
             <tr>
                 <td>{{name}}</td>
-                <td>{{password}}</td>
                 <td>{{email}}</td>
                 <td>{{display_name}}</td>
                 {{#superAdmin}}
                 <td>
-                    <a href="/updateUser/?id={{id}}">Modifier Admin</a>
-                    <a href="/deleteUser/?id={{id}}">Supprimer</a>
+                    <a href="/updateUser/{{id}}">Modifier Admin</a>
+                    <a href="/deleteUser/{{id}}">Supprimer</a>
                 </td>
                 {{/superAdmin}}
             </tr>

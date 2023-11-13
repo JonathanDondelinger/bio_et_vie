@@ -10,7 +10,7 @@ class BaseModel{
 
     public function __construct()
     {
-        require dirname(__DIR__) .'/../config/config.php';
+        require_once dirname(__DIR__) .'/../config/config.php';
 
         $dsn = "mysql:host=" . DB_HOST . ";dbname=". DB_NAME . ";charset=" . DB_CHARSET;
 

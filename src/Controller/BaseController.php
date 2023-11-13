@@ -16,4 +16,5 @@ class BaseController{
             'entity_flags' => ENT_QUOTES)
         ); 
     }
+   
 }

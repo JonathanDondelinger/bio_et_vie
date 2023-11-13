@@ -22,17 +22,11 @@
                 <input type="email" name="email">
             </div>
             <div>
-                <label for="slug">Slug:</label>
-                <select name="slug" ">
-                    <option value="admin">admin</option>
-                    <option value="super_admin">super_admin</option>
-                </select>
-            </div>
-            <div>
-                <label for="display_name">Rôle :</label>
-                <select name="display_name" ">
-                    <option value="Admin">Admin</option>
-                    <option value="Super Admin">Super Admin</option>
+                <label for="role">Rôle :</label>
+                <select name="role">
+                    {{#roles}}
+                    <option value="{{id_role}}">{{display_name}}</option>
+                    {{/roles}}
                 </select>
             </div>
             <button type="submit">Créer</button>
