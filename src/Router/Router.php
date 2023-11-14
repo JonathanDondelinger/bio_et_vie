@@ -51,10 +51,6 @@ class Router {
                 }
             }
             
-            
-            
-            
-            
             if($sameRoute){ 
                 $controllerName = $routeParameters['controller'];
                 $functionName = $routeParameters['function'];

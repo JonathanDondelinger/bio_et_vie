@@ -40,7 +40,7 @@ class ForgotPasswordController extends BaseController
 
                 $model->creatToken($email, $token, $expDate);
 
-                $resetLink = 'http://bio_et_vie.local/forgotPasswordReset?token=' . $token;
+                $resetLink = 'http://bio_et_vie.local/forgotPasswordReset?token=' . $token . '&exp=' . urlencode($expDate);
 
                 $subject = 'Réinitialisation mot de passe';
 

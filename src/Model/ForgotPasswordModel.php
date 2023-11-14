@@ -38,11 +38,10 @@ class ForgotPasswordModel extends BaseModel{
 
     }
 
-    public function getToken($token, $email){
-        $query = " SELECT * FROM password_reset WHERE token = :token and email = :email";
+    public function getToken($token){
+        $query = " SELECT * FROM password_reset WHERE token = :token ";
         $statement = $this->pdo->prepare($query);
-        $statement->bindParam(':token', $token); 
-        $statement->bindParam(':email', $email);
+        $statement->bindParam(':token', $token);
         $statement->execute();
 
     }
