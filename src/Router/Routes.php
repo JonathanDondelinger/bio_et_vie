@@ -103,11 +103,19 @@ class Routes {
             'path' => '/updateUser/{id}',
         ],
 
-        'forgetPassword' => [
-            'controller' => 'ForgetPasswordController',
-            'function' => 'forgetPassword',
-            'path' => '/forgetPassword'
+        'forgotPassword' => [
+            'controller' => 'ForgotPasswordController',
+            'function' => 'forgotPassword',
+            'path' => '/forgotPassword'
+        ],
+
+        'forgotPasswordReset' => [
+            'controller' => 'ForgotPasswordResetController',
+            'function' => 'forgotPasswordReset',
+            'path' => '/forgotPasswordReset'
         ]
+
+
 
 
     ];  
