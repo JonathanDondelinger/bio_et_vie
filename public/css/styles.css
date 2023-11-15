@@ -539,19 +539,28 @@ h4 {
   }
   .containerform {
     width: 45vw;
-    height: 45vw;
+    height: 46vw;
     margin: 8% 0 8% 10%;
     background-color: #ffffff;
     padding: 30px;
     box-shadow: 0px 0 10px gray;
   }
-  form {
+  .containerform form {
     width: 100%;
     height: 100%;
     padding-top: 1vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .containerform form button {
+    background-color: #202328;
+    color: #ffffff;
+    width: 60%;
+    height: 50px;
+    font-size: 1.1em;
+    align-self: center;
+    margin: 0;
   }
   #form1 {
     width: 100%;
@@ -566,7 +575,7 @@ h4 {
     gap: 10px;
   }
   #form3 input {
-    height: 8.5vw;
+    height: 12vw;
     text-align: start;
   }
   .form {
@@ -580,15 +589,6 @@ h4 {
     background-color: #dfe8e7;
     border: none;
     padding-left: 15px;
-  }
-  button {
-    background-color: #202328;
-    color: #ffffff;
-    width: 60%;
-    height: 50px;
-    font-size: 1.1em;
-    align-self: center;
-    margin-top: 20px;
   }
   .containercontact {
     width: 35vw;
@@ -630,6 +630,9 @@ h4 {
   nav ul li {
     font-size: 0.8em;
   }
+  section {
+    margin: 0% 5% 5%;
+  }
   .containercard {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
@@ -664,6 +667,109 @@ h4 {
   .containerpro .proright {
     padding: 25px;
   }
+  .containerform {
+    width: 54vw;
+    height: 58vw;
+    margin: 8% 0 12% 5%;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0px 0 10px gray;
+  }
+  .containerform form {
+    width: 100%;
+    height: 100%;
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .containerform form button {
+    background-color: #202328;
+    color: #ffffff;
+    width: 60%;
+    height: 50px;
+    font-size: 1.1em;
+    align-self: center;
+    margin: 0;
+  }
+  #form1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  #form2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+  #form3 input {
+    height: 12vw;
+    text-align: start;
+  }
+  .form {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    background-color: #dfe8e7;
+    border: none;
+    padding-left: 15px;
+  }
+  .containercontact {
+    width: 35vw;
+    height: 66vw;
+    position: relative;
+    bottom: -5vw;
+  }
+  .info {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 10%;
+    height: 33vw;
+  }
+  .info ul {
+    list-style-type: none;
+    font-size: 1em;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .info li {
+    padding-top: 10px;
+  }
+  .info h3 {
+    color: #9DF9E8;
+    font-size: 1.5em;
+  }
+  .map {
+    width: 100%;
+    height: 33vw;
+    box-shadow: 0px 0 10px gray;
+  }
+  .carte {
+    width: 100%;
+    height: 100%;
+  }
+}
+footer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 100px;
+  padding-left: 15%;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+footer a {
+  color: #4acab3;
 }
 @media screen and (max-width: 480px) {
   footer {
@@ -1048,6 +1154,7 @@ h4 {
   nav .navMobile {
     width: 100%;
     display: flex;
+    align-items: end;
   }
   nav .navMobile #burger-menu {
     width: 50px;
@@ -1058,23 +1165,55 @@ h4 {
     right: 30px;
     border-radius: 50%;
     border: solid 1px #9DF9E8;
+    /* span {
+                    width: 30px;
+                    height: 4px;
+                    position: absolute;
+                    top: 5px;
+                    border-radius: 4px;
+                    background-color: @color1;
+                    transition: all 0.3s ease-in-out;
+                } */
   }
   nav .navMobile #burger-menu span {
-    width: 30px;
+    width: 75%;
     height: 4px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 4px;
-    transform: translate(-50%, -50%);
     background-color: #9DF9E8;
+    border-radius: 12px;
+    position: absolute;
+    top: 21px;
+    left: 12.5%;
+    display: block;
     transition: all 0.3s ease-in-out;
   }
-  nav .navMobile #burger-menu span:nth-of-type(2) {
-    top: calc(50% - 9px);
+  nav .navMobile #burger-menu span::before,
+  nav .navMobile #burger-menu span::after {
+    content: "";
+    width: 100%;
+    background-color: #9DF9E8;
+    display: block;
+    transition: all 0.5s ease-in-out;
+    border-radius: 12px;
+    height: 4px;
   }
-  nav .navMobile #burger-menu span:nth-of-type(3) {
-    top: calc(50% + 9px);
+  nav .navMobile #burger-menu span::before {
+    transform: translateY(-10px);
+  }
+  nav .navMobile #burger-menu span::after {
+    transform: translateY(10px);
+    margin-top: -4px;
+  }
+  nav .navMobile #burger-menu.active span {
+    left: -4px;
+    background-color: transparent;
+  }
+  nav .navMobile #burger-menu.active span::before {
+    width: 75%;
+    transform: rotateZ(-45deg) translateX(12px);
+  }
+  nav .navMobile #burger-menu.active span::after {
+    width: 75%;
+    transform: rotateZ(45deg) translateX(12px);
   }
   nav .navMobile #menu {
     width: 100%;
