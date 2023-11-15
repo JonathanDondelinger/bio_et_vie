@@ -2,6 +2,16 @@
 
 let burgerMenu = document.getElementById('burger-menu');
 let overlay = document.getElementById('menu');
-burgerMenu.addEventListener('click', function () {
-  overlay.classList.toggle("active");
+let body = document.querySelector('body');
+
+burgerMenu.addEventListener('click', () => {
+    overlay.classList.toggle("active");
+    burgerMenu.classList.toggle("active");
+    body.classList.toggle('no-scroll');
+});
+
+window.addEventListener('resize', () => {
+  overlay.classList.remove("active");
+    burgerMenu.classList.remove("active");
+    body.classList.remove('no-scroll');
 });
