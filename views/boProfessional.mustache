@@ -1,38 +1,47 @@
+
 {{>header}}
-<body>
+{{>navBarBo}}
+<div class='back'>
     <a href="backOffice">Retour</a>
-<table>
-    <thead>
-        <tr>
-            <th>Raison Sociale</th>
-            <th>Siret</th>
-            <th>Numero Bio</th>
-            <th>Telephone</th>
-            <th>E-mail</th>
-            <th>Gerant</th>
-            <th>Telephone Commerciale</th>
-            <th>Sites Web</th>
-            <th>Action</th>    
-        </tr>
-    </thead>
-    <tbody>
-        {{#professionals}}
+</div>
+
+<div class='containerTablePro'>
+    <div class='add'>
+        <a href="addProfessional">AJOUTER</a>
+    </div>
+    <table>
+        <thead>
             <tr>
-                <td>{{raisonSociale}}</td>
-                <td>{{siret}}</td>
-                <td>{{numeroBio}}</td>
-                <td>{{telephone}}</td>
-                <td>{{email}}</td>
-                <td>{{gerant}}</td>
-                <td>{{telephoneCommerciale}}</td>
-                <td>{{sitesWeb}}</td>
-                {{^api}}
-                    <td><a href="/deletePro/?id={{id}}">Supprimer</a></td>
-                {{/api}}
+                <th scope="col">Raison Sociale</th>
+                <th scope="col">Siret</th>
+                <th scope="col">Numero Bio</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Gerant</th>
+                <th scope="col">Telephone Commerciale</th>
+                <th scope="col">Sites Web</th>
+                <th scope="col">Action</th>    
             </tr>
-        {{/professionals}}    
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {{#professionals}}
+                <tr>
+                    <td data-label="Raison Sociale">{{raisonSociale}}</td>
+                    <td data-label="Siret">{{siret}}</td>
+                    <td data-label="Numero Bio">{{numeroBio}}</td>
+                    <td data-label="Telephone">{{telephone}}</td>
+                    <td data-label="E-mail">{{email}}</td>
+                    <td data-label="Gerant">{{gerant}}</td>
+                    <td data-label="Telephone Commerciale">{{telephoneCommerciale}}</td>
+                    <td data-label="Sites Web">{{sitesWeb}}</td>
+                    {{^api}}
+                        <td data-label="Action"><a href="/deletePro/?id={{id}}">Supprimer</a></td>
+                    {{/api}}
+                </tr>
+            {{/professionals}}
+        </tbody>
+    </table>
+</div>
 <div class="pagination">
     <ul>
         <li>
@@ -47,9 +56,6 @@
             <a href="/boProfessional?page={{next}}">Suivant</a>
         </li>
     </ul>
-</div>
-<div class='add'>
-<a href="addProfessional">AJOUTER</a>
 </div>
 </body>
 </html>

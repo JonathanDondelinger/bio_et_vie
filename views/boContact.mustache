@@ -1,34 +1,39 @@
 {{>header}}
-<body>
+
+
+<div class='back'>
     <a href="backOffice">Retour</a>
-<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>E-mail</th>
-            <th>Téléphone</th>
-            <th>Sujet</th>
-            <th>Etat</th>
-            <th>Action</th>      
-        </tr>
-    </thead>
-    <tbody>
-        {{#contact}}
+</div>
+<div class='containerTable'>
+    <table>
+        <thead>
             <tr>
-                <td>{{last_name}}</td>
-                <td>{{first_name}}</td>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{subject}}</td>
-                <td>{{view}}</td>
-                <td>
-                <a href="readContact/{{id}}">Lire</a>
-                <a href="/deleteContact/?id={{id}}">Supprimer</a>
-                </td>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Sujet</th>
+                <th scope="col">Etat</th>
+                <th scope="col">Action</th>      
             </tr>
-        {{/contact}}    
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {{#contact}}
+                <tr>
+                    <td data-label="Nom">{{last_name}}</td>
+                    <td data-label="Prénom">{{first_name}}</td>
+                    <td data-label="E-mail">{{email}}</td>
+                    <td data-label="Téléphone">{{phone}}</td>
+                    <td data-label="Sujet">{{subject}}</td>
+                    <td data-label="Etat">{{view}}</td>
+                    <td data-label="Action">
+                    <a href="readContact/{{id}}">Lire</a>
+                    <a href="/deleteContact/?id={{id}}">Supprimer</a>
+                    </td>
+                </tr>
+            {{/contact}}    
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

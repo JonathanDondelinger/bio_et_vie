@@ -1,5 +1,6 @@
 {{>header}}
-<body>
+{{>navBarBo}}
+
 <div class="titleAdmin">
     <h1>ADMINISTRATION</h1>
     <h5>Bonjour : {{userName}}</h5>
@@ -7,7 +8,7 @@
 
 <div id="sectionBo">
     <div class="boNav">
-        <a href="boUser">
+        <a href='boUser'>
             <h2>Utilisateur</h2>
             <p>{{user}} inscrit</p>
         </a>
@@ -21,7 +22,7 @@
     </div>
     {{#superAdmin}}
     <div class="boNav">
-        <a href="boContact">
+        <a href='boContact'>
             <h2>Méssage</h2>
             <p>{{contact}} Non-lu</p>
         </a>

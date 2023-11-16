@@ -1,6 +1,11 @@
 {{>header}}
-<body>
-    <div id="formPro">
+{{>navBarBo}}
+
+<div class='back'>
+    <a href="boProfessional">Retour</a>
+</div>
+<div id='containerFormBo'>
+    <div class="formBo">
         <form method="post" action="/addProfessional">
         <label for="id_api">id api</label>
         <input type="number" name="id_api">
@@ -75,11 +80,10 @@
                 <option value="Transport">Transport</option>
                 <option value="Exportation">Exportation</option>
             </select>
-            <button type="submit">Valider</button>
         </form>
-
-        
+        <button type="submit">Valider</button>
     </div>
-    <a href="boProfessionnal">Retour</a>
+</div>
+
 </body>
 </html>

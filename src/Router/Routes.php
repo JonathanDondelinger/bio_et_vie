@@ -44,9 +44,9 @@ class Routes {
         ],
 
         'addUser' => [
-            'controller' => 'AddUserController',
+            'controller' => 'BoUserController',
             'function' => 'addUser',
-            'path' => '/addUser'
+            'path' => '/BoUser'
         ],
 
         'boPro' => [

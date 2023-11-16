@@ -668,6 +668,9 @@ h4 {
   section {
     margin: 0% 5% 5%;
   }
+  .presentation {
+    width: 60%;
+  }
   .containercard {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
@@ -902,6 +905,7 @@ footer a {
   .presentation h2 {
     position: relative;
     z-index: 2;
+    font-size: 1.7em;
   }
   #border-presentation {
     width: 65vw;
@@ -949,6 +953,9 @@ footer a {
     position: relative;
     top: 10%;
   }
+  .containertri .tri p {
+    font-size: 0.6em;
+  }
   .containertri a {
     padding: 0;
   }
@@ -968,6 +975,7 @@ footer a {
     z-index: 2;
     text-align: justify;
     width: 80%;
+    font-size: 1.7em;
   }
   #border-professionnels {
     width: 70vw;

@@ -20,7 +20,6 @@ class UpdateUserController extends BaseController
         $roles = []; 
 
         $roles = $roleModel->getRoles();
-        /* var_dump($roles); */
         foreach ($roles as &$role) {
             if($role['id_role'] === $user['id_role']){
                 $selected = 'selected';
@@ -51,8 +50,6 @@ class UpdateUserController extends BaseController
                 $errors[] = 'Erreur';
             }
         }
-
-
 
         echo $this->mustache->render('updateUser', [
             'user' => $user,

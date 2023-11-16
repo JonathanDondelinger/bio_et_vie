@@ -1,8 +1,8 @@
 {{>header}}
 
- <h1>Modifier utilisateur</h1>
-
-    <div class="formUser">
+<div id='containerFormBo'>
+    <h1>Modifier utilisateur</h1>
+    <div class="formBo">
         <ul>
         {{#errors}}
         <li>{{.}}</li>
@@ -26,11 +26,12 @@
                     {{/roles}}
                 </select>
             </div>
-            <button type="submit">Modifier</button>
         </form>
+        <button type="submit">Modifier</button>
     </div>
-    
-
-<a href="/boUser">Retour</a>
+    <div class='back'>
+        <a href="/boUser">Retour</a>
+    </div>
+</div>
 </body>
 </html>

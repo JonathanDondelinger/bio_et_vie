@@ -1,35 +1,71 @@
+
 {{>header}}
 
-<body>
+<div class='back'>
     <a href="backOffice">Retour</a>
-<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>E-mail</th>
-            <th>Role</th>
-            {{#superAdmin}}
-            <th>Action</th>  
-            {{/superAdmin}}
-        </tr>
-    </thead>
-    <tbody>
-        {{#user}}
+</div>
+<div class='containerTable'>
+    <table>
+        <thead>
             <tr>
-                <td>{{name}}</td>
-                <td>{{email}}</td>
-                <td>{{display_name}}</td>
+                <th scope="col">Nom</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Role</th>
                 {{#superAdmin}}
-                <td>
-                    <a href="/updateUser/{{id}}">Modifier Admin</a>
-                    <a href="/deleteUser/{{id}}">Supprimer</a>
-                </td>
+                <th scope="col">Action</th>  
                 {{/superAdmin}}
             </tr>
-        {{/user}}    
-    </tbody>
-</table>
-<div class='add'>
-<a href="addUser">AJOUTER</a>
+        </thead>
+        <tbody>
+            {{#user}}
+                <tr>
+                    <td data-label="Nom">{{name}}</td>
+                    <td data-label="E-mail">{{email}}</td>
+                    <td data-label="Role">{{display_name}}</td>
+                    {{#superAdmin}}
+                    <td data-label="Action">
+                        <a href="/updateUser/{{id}}">Modifier Admin</a>
+                        <a href="/deleteUser/{{id}}">Supprimer</a>
+                    </td>
+                    {{/superAdmin}}
+                </tr>
+            {{/user}}    
+        </tbody>
+    </table>
+</div>
+<div id='containerFormBo'>
+    <h1>Nouvel utilisateur</h1>
+
+    <div class="formBo">
+        <ul>
+        {{#errors}}
+        <li>{{.}}</li>
+        {{/errors}}
+        </ul>
+        <form method="post" action="/boUser">
+            <div>
+                <label for="name">Nom :</label>
+                <input type="text" name="name" >
+            </div>
+            <div>
+                <label for="password">Password :</label>
+                <input type="pass" name="password">
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label for="role">Rôle :</label>
+                <select name="role">
+                    {{#roles}}
+                        <option value="{{id_role}}">{{display_name}}</option>
+                    {{/roles}}
+                </select>
+            </div>
+        </form>
+         <button type="submit">Créer</button>
+    </div>
+
 </div>
 </body>
