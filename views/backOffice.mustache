@@ -2,30 +2,65 @@
 <body>
 <div class="titleAdmin">
     <h1>ADMINISTRATION</h1>
-    <h1>Bonjour : {{userRole}} {{userName}}</h1>
+    <h5>Bonjour : {{userName}}</h5>
 </div>
-<div id="sectionBo">
-    <div class="boCard">
-        <h2>Utilisateur</h2>
-        <p>{{user}} inscrit</p>
-        <a href="boUser">Gérer</a>
-    </div>
 
-    <div class="boCard">
-        <h2>Catalogue</h2>
-        <h2>Professionnel</h2>
-        <p>{{professional}} inscrit</p>
-        <a href='boProfessional'>Gérer catalogue</a>
+<div id="sectionBo">
+    <div class="boNav">
+        <a href="boUser">
+            <h2>Utilisateur</h2>
+            <p>{{user}} inscrit</p>
+        </a>
     </div>
-{{#superAdmin}}
-    <div class="boCard">
-        <div id="nbcontact">
-        <h2>Méssage</h2>
-        <p>{{contact}} Non-lu</p>
-        </div>
-        <a href="boContact">Gérer message</a>
+    <div class="boNav">
+        <a href='boProfessional'>
+            <h2>Catalogue</h2>
+            <h2>Professionnel</h2>
+            <p>{{professional}} inscrit</p>
+        </a>
     </div>
-{{/superAdmin}}
+    {{#superAdmin}}
+    <div class="boNav">
+        <a href="boContact">
+            <h2>Méssage</h2>
+            <p>{{contact}} Non-lu</p>
+        </a>
+    </div>
+    {{/superAdmin}}
 </div>
+<div id='containerBo'>
+    <div id='containerLastPro'>
+        <h2>Dernier professionnel ajouté</h2>
+        {{#lastPro}}
+        <div class='lastpro'>
+            <h4>{{raisonSociale}}</h4>
+            <p>{{gerant}}</p>
+            <p>{{telephone}}</p>
+        </div>
+        {{/lastPro}}
+    </div>
+    <div id='containerLastMessage'>
+        <h2>Dernier message</h2>
+        {{#lastMessage}}
+        <div class='lastMessage'>
+            <div class='texte'>
+                <h4>{{first_name}}</h4>
+                <h4>{{last_name}}</h4>
+            </div>
+            <div class='texte'>
+                <p>{{email}}</p>
+                <p>Sujet : {{subject}}</p>
+            </div>
+        </div>
+        {{/lastMessage}}
+    </div>
+</div>
+
+
+
+
+
+
+
 </body>
 </html>
