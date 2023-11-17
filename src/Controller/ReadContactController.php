@@ -15,7 +15,8 @@ class ReadContactController extends BaseController{
         
 
         echo $this->mustache->render('readContact', [
-            'message' => $message
+            'message' => $message,
+            'navBarBo' => $this->navBarBo(),
         ]);
     }
 }

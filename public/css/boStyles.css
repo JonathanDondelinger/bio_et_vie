@@ -586,4 +586,7 @@ table tbody td {
     font-size: 0.8em;
     margin-bottom: 10vh;
   }
+  .containerTable {
+    margin-top: 15vh;
+  }
 }

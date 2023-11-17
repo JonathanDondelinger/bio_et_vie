@@ -113,7 +113,6 @@ class IndexController extends BaseController
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional,
-            
         ]);
     }
 }

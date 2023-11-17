@@ -15,18 +15,9 @@ class BoUserController extends BaseController
 
         $user = $model->getUser();
 
-        $userRole = $_SESSION['user']['role'];
-
-        $superAdmin = ($userRole === 'super_admin');
-
-        echo $this->mustache->render('boUser', [
-            'user' => $user,
-            'superAdmin' => $superAdmin
-        ]);
-    }
-
-    public function addUser()
-    {
+        $currentUser = $this->getCurrentUser();
+        
+        $superAdmin = ($currentUser['slug'] === 'super_admin');
 
         $errors = [];
 
@@ -37,8 +28,6 @@ class BoUserController extends BaseController
         
         $roles = $roleModel->getRoles();
 
-        
-        
         if ($_POST) {
             if (
                 isset($_POST['name']) && !empty($_POST['name'])
@@ -62,7 +51,10 @@ class BoUserController extends BaseController
 
         echo $this->mustache->render('boUser', [
             'errors' => $errors,
-            'roles' => $roles
+            'roles' => $roles,
+            'user' => $user,
+            'superAdmin' => $superAdmin,
+            'navBarBo' => $this->navBarBo(),
         ]);
     }
 }

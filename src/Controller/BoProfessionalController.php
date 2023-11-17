@@ -68,6 +68,7 @@ class BoProfessionalController extends BaseController{
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional,
+            'navBarBo' => $this->navBarBo(),
         ]);
     }
 }

@@ -1,6 +1,6 @@
 
 {{>header}}
-
+{{{navBarBo}}}
 <div class='back'>
     <a href="backOffice">Retour</a>
 </div>
@@ -22,7 +22,7 @@
                     <td data-label="Nom">{{name}}</td>
                     <td data-label="E-mail">{{email}}</td>
                     <td data-label="Role">{{display_name}}</td>
-                    {{#superAdmin}}
+                    {{#superAdmin}} 
                     <td data-label="Action">
                         <a href="/updateUser/{{id}}">Modifier Admin</a>
                         <a href="/deleteUser/{{id}}">Supprimer</a>

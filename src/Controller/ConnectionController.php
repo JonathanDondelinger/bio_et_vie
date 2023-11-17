@@ -25,8 +25,6 @@ class ConnectionController extends BaseController
                 if(password_verify( $password,  $user['password'])){
                     $_SESSION['user'] = [
                         "id" => $user['id'],
-                        "name" => $user['name'],
-                        "role" => $user['slug']
                     ];
 
                     header("location: /backOffice");

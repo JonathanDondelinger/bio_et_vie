@@ -8,7 +8,12 @@ class BoContactController extends BaseController
 {
     public function boContact()
     {
+        $currentUser = $this->getCurrentUser();
 
+        if($currentUser['slug'] !== 'super_admin'){
+            return;
+        }
+        
         $model = new BoContactModel();
 
         $contact = $model->getMessage();
@@ -23,7 +28,7 @@ class BoContactController extends BaseController
         
         echo $this->mustache->render('boContact', [
             'contact' => $contact,
-            
+            'navBarBo' => $this->navBarBo(),
         ]);
     }
 }

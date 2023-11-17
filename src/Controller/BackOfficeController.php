@@ -24,15 +24,17 @@ class BackOfficeController extends BaseController
         $nbUser = count($user);
 
         $lastPro = $model->LastProfessional();
-
+ 
         $lastMessage = $model->lastmessage();
 
-        $userRole = $_SESSION['user']['role'];
+        $currentUser = $this->getCurrentUser();
 
-        $userName = $_SESSION['user']['name'];
+        $userName = $currentUser['name'];
 
-        $superAdmin = ($userRole === 'super_admin');
+        $userRole = $currentUser['slug'];
 
+        $superAdmin = ($currentUser['slug'] === 'super_admin');
+    
         echo $this->mustache->render('backOffice', [
             'contact' => $nbContact,
             'user' => $nbUser,
@@ -41,7 +43,8 @@ class BackOfficeController extends BaseController
             'userName' => $userName,
             'userRole' => $userRole,
             'lastPro' => $lastPro,
-            'lastMessage' => $lastMessage
+            'lastMessage' => $lastMessage,
+            'navBarBo' => $this->navBarBo(),
         ]);
     }
 }
