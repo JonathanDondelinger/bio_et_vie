@@ -53,6 +53,5 @@ class BaseController
         $user = $model->getUser($user_id);
 
         return $user ;
-
     }
 }

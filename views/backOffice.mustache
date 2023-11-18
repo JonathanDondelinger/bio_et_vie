@@ -3,7 +3,10 @@
 
 <div class="titleAdmin">
     <h1>ADMINISTRATION</h1>
+    <div>
     <h5>Bonjour : {{userName}}</h5>
+    <a href='/logout'>Déconnexion<a>
+    </div>
 </div>
 
 <div id="sectionBo">
@@ -23,7 +26,7 @@
     {{#superAdmin}}
     <div class="boNav">
         <a href='boContact'>
-            <h2>Méssage</h2>
+            <h2>Message</h2>
             <p>{{contact}} Non-lu</p>
         </a>
     </div>

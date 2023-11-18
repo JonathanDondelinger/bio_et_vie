@@ -30,6 +30,13 @@ class Routes {
             'path' => '/connection'
         ],
 
+        'logout' => [
+            'controller' => 'LogoutController',
+            'function' => 'Logout',
+            'path' => '/logout'
+
+        ],
+
         'backOffice' => [
             'controller' => 'BackOfficeController',
             'function' => 'backOffice',

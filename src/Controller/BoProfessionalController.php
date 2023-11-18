@@ -7,6 +7,12 @@ use App\Model\BoProfessionalModel;
 class BoProfessionalController extends BaseController{
     public function boPro(){
         
+        $currentUser = $this->getCurrentUser();
+
+        if($currentUser === False){
+            header("Location: /connection");
+        }
+
         $model = new BoProfessionalModel();
 
         $pagination = $model->paginationProfessional();

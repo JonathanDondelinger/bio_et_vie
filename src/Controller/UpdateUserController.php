@@ -10,6 +10,12 @@ class UpdateUserController extends BaseController
     public function updateUser($id)
     {
 
+        $currentUser = $this->getCurrentUser();
+
+        if($currentUser === False){
+            header("Location: /connection");
+        }
+
         $errors = [];
 
         $userModel = new UserModel();

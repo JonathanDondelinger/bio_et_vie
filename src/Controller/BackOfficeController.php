@@ -8,6 +8,19 @@ class BackOfficeController extends BaseController
 {
     public function backoffice()
     {
+        $currentUser = $this->getCurrentUser();
+
+        if($currentUser === False){
+            header("Location: /connection");
+        }
+        
+        $userName = $currentUser['name'];
+
+        $userRole = $currentUser['slug'];
+
+        $superAdmin = ($currentUser['slug'] === 'super_admin');
+
+        
 
         $model = new BackOfficeModel();
 
@@ -27,14 +40,6 @@ class BackOfficeController extends BaseController
  
         $lastMessage = $model->lastmessage();
 
-        $currentUser = $this->getCurrentUser();
-
-        $userName = $currentUser['name'];
-
-        $userRole = $currentUser['slug'];
-
-        $superAdmin = ($currentUser['slug'] === 'super_admin');
-    
         echo $this->mustache->render('backOffice', [
             'contact' => $nbContact,
             'user' => $nbUser,

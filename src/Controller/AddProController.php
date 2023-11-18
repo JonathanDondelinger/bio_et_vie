@@ -8,6 +8,11 @@ class AddProController extends BaseController{
 
     public function addPro(){
 
+        $currentUser = $this->getCurrentUser();
+
+        if($currentUser === False){
+            header("Location: /connection");
+        }
         
         $errors = [];
 

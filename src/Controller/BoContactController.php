@@ -10,9 +10,13 @@ class BoContactController extends BaseController
     {
         $currentUser = $this->getCurrentUser();
 
+        if($currentUser === False){
+            header("Location: /connection");
+        }
+
         if($currentUser['slug'] !== 'super_admin'){
             return;
-        }
+        };
         
         $model = new BoContactModel();
 

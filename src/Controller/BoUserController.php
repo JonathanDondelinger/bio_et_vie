@@ -17,6 +17,10 @@ class BoUserController extends BaseController
 
         $currentUser = $this->getCurrentUser();
         
+        if($currentUser === False){
+            header("Location: /connection");
+        }
+        
         $superAdmin = ($currentUser['slug'] === 'super_admin');
 
         $errors = [];
