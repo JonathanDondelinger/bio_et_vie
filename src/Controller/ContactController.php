@@ -32,7 +32,7 @@ class ContactController extends BaseController{
 
                 $contact = $model->addContact($last_name, $first_name, $email, $phone, $subject, $message, $view);
             }else{
-                $errors[] = 'test';
+                $errors[] = '';
             };   
         }
         echo $this->mustache->render('contact', [

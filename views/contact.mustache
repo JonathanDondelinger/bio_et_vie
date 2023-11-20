@@ -8,7 +8,7 @@
         <h2>CONTACTEZ-NOUS</h2>
         <ul>
         {{#errors}}
-        <li>{{.}}</li>
+            {{.}}
         {{/errors}}
         </ul>
             <form method="post" action="/contact">
@@ -40,7 +40,7 @@
                     <label for="message"></label>
                     <input type="text" name="message" placeholder="Message">
                 </div>
-                <button type="submit">Envoyer</button>
+                <button type="submit"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i> Envoyer</button>
             </form>
         </div>
     </div>
@@ -48,9 +48,9 @@
         <div class="info">
             <h3>NOS INFORMATIONS</h3>
             <ul>
-                <li>contact@bio-et-vie.fr</li>
-                <li>04 75 25 53 00</li>
-                <li>06 68 54 78 00</li>
+                <li><i class="fa-solid fa-envelope-open-text" style="color: #ffffff;"></i> contact@bio-et-vie.fr</li>
+                <li><i class="fa-solid fa-phone-flip" style="color: #ffffff;"></i> 04 75 25 53 00</li>
+                <li><i class="fa-solid fa-mobile-screen-button" style="color: #ffffff;"></i> 06 68 54 78 00</li>
             </ul>
         </div>
         <div class="map">
