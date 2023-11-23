@@ -45,7 +45,8 @@ class ApiModel extends BaseModel {
 
     public function addActivity( $id_activity_api, $activity_name){
 
-        $query = "INSERT INTO activity (id_activity_api, activity_name) VALUES (:id_activity_api, :activity_name)";
+        $query = "INSERT INTO activity (id_activity_api, activity_name) 
+                    VALUES (:id_activity_api, :activity_name)";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_activity_api', $id_activity_api);
         $statement->bindParam(':activity_name', $activity_name);

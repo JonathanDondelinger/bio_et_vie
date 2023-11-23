@@ -47,7 +47,7 @@ class ApiController extends BaseController
 
             if($successfulApiCalls > 48){
                 sleep(1);
-               $successfulApiCalls = 0; 
+               $successfulApiCalls = 0; A
             }
 
             $items = $data->items;
@@ -92,7 +92,7 @@ class ApiController extends BaseController
                     }
                     // table de jointure activity
                     $model->proActivity($professional_id, $activity_id);
-                   
+                
                 } 
                 foreach($categories as $categorie){
 

@@ -16,7 +16,7 @@ class IndexModel extends BaseModel
     {
         $query = "SELECT COUNT(id) AS nbProfessional FROM professional ";
         if ($categoryId > 0) {
-            $query .= "LEFT JOIN professional_category ON professional.id = professional_category.professional_id 
+            $query .= "INNER JOIN professional_category ON professional.id = professional_category.professional_id 
                         WHERE professional_category.category_id = :category_id ";
         }
         $statement = $this->pdo->prepare($query);
@@ -30,8 +30,8 @@ class IndexModel extends BaseModel
     public function findProfessional($first, $professionalPerPage, $categoryId = 0)
     {
         $query = "SELECT DISTINCT professional.id, professional.raisonSociale, professional.gerant, professional.telephone, GROUP_CONCAT(DISTINCT category.id_category ) AS id_category  FROM professional  
-        LEFT JOIN professional_category ON professional_category.professional_id = professional.id 
-        LEFT JOIN category ON  professional_category.category_id = category.id_category  ";
+        INNER JOIN professional_category ON professional_category.professional_id = professional.id 
+        INNER JOIN category ON  professional_category.category_id = category.id_category  ";
         if ($categoryId > 0) {
             $query .= "WHERE professional_category.category_id = :category_id ";
         }
