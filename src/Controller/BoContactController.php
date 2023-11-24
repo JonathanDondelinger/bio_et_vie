@@ -22,11 +22,11 @@ class BoContactController extends BaseController
 
         $contact = $model->getMessage();
 
-        foreach($contact as &$view){
-            if($view['view'] == 1){
-                $view['view'] = "lu";
+        foreach($contact as &$read){
+            if($read['read'] == 1){
+                $read['read'] = "lu";
         }else{
-            $view['view'] = "Non-lu";
+            $read['read'] = "Non-lu";
         }
         };
         

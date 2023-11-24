@@ -47,7 +47,7 @@ class ApiController extends BaseController
 
             if($successfulApiCalls > 48){
                 sleep(1);
-               $successfulApiCalls = 0; A
+               $successfulApiCalls = 0; 
             }
 
             $items = $data->items;

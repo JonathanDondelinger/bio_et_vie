@@ -11,7 +11,7 @@ class IndexController extends BaseController
 
         $model = new IndexModel();
 
-         $pathLogo = array(
+        $pathLogo = array(
 
             1 => '/images/icons/icon-artisan-commercant_gris.png',
             2 => '/images/icons/icon-grossiste_gris.png',
@@ -20,7 +20,7 @@ class IndexController extends BaseController
             5 => '/images/icons/icon-grande-et-moyenne-surface_gris.png',
             6 => '/images/icons/icon-restaurant_gris.png'
 
-        ); 
+        );
 
         $categoryId = 0;
 
@@ -44,8 +44,6 @@ class IndexController extends BaseController
 
 
         $first = ($currentPage * $professionalPerPage) - $professionalPerPage;
-
-
 
         if ($categoryId > 0) {
 
@@ -84,24 +82,22 @@ class IndexController extends BaseController
             $next = $pageMax;
         }
 
-
-
         foreach ($professionals as &$professional) {
             $idCategory = (int)$professional['id_category'];
-                     
-            if ($idCategory > 0 && isset($pathLogo[$idCategory])) {
-                
-                $logo = $pathLogo[$idCategory];                
 
-            }else{
-                
+            if ($idCategory > 0 && isset($pathLogo[$idCategory])) {
+
+                $logo = $pathLogo[$idCategory];
+            } else {
+
                 $logo = null;
-                
             }
 
             $professional['logo'] = $logo;
-
         }
+
+
+        
 
 
         echo $this->mustache->render('index', [
@@ -113,6 +109,7 @@ class IndexController extends BaseController
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional,
+            
         ]);
     }
 }

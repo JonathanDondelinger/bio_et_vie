@@ -43,7 +43,7 @@ class UpdateUserController extends BaseController
                 && isset($_POST['email']) && !empty($_POST['email'])
                 && isset($_POST['role']) && !empty($_POST['role'])  
             ) {
-                var_dump('test');
+                
                 $name = strip_tags($_POST['name']);
                 $email = strip_tags($_POST['email']);
                 $role_id = (int)$_POST['role'];
