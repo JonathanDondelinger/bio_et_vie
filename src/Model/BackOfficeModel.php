@@ -10,7 +10,7 @@ class BackOfficeModel extends BaseModel
 
         public function getMessage()
         {
-                $query = "SELECT 'view' FROM contact_message WHERE view = 0";
+                $query = "SELECT 'read' FROM contact_message WHERE 'read' = 0";
                 $statement = $this->pdo->prepare($query);
                 $statement->execute();
                 $result1 = $statement->fetchAll(PDO::FETCH_ASSOC);

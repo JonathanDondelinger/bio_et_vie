@@ -16,10 +16,12 @@ class DeleteProController extends BaseController
 
             $id = (int)strip_tags($_GET['id']);
 
+            
+
             $model->deletePro_category($id);
 
             $model->deletePro_activity($id);
-
+            
             $model->deletePro($id);
 
             header('Location: /boProfessional');
