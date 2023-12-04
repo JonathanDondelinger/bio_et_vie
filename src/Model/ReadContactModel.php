@@ -17,7 +17,7 @@ class ReadContactModel extends BaseModel{
         return $result;
     }
     public function viewOk($id){
-        $query = "UPDATE contact_message SET view = '1' WHERE id = :id";
+        $query = "UPDATE contact_message SET read = '1' WHERE id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id',$id);
         $statement->execute();
