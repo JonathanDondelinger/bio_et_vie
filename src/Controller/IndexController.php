@@ -25,7 +25,7 @@ class IndexController extends BaseController
         $categoryId = 0;
 
         if (isset($_GET['categorie'])) {
-            $categoryId = (int)$_GET['categorie'];
+            $categoryId = (int)strip_tags($_GET['categorie']);
         }
 
         $pagination = $model->paginationProfessional($categoryId);
