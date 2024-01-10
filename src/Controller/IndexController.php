@@ -54,7 +54,7 @@ class IndexController extends BaseController
         }
 
         $pageNumbers = [
-            "pageMin" => null,
+            "pageMin" => [],
             "pageBefore" => [],
             "currentPage" => [],
             "pageAfter" => [],
@@ -110,10 +110,6 @@ class IndexController extends BaseController
 
             $professional['logo'] = $logo;
         }
-
-        echo '<pre>';
-        var_dump($pageNumbers);
-        echo '</pre>';
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
