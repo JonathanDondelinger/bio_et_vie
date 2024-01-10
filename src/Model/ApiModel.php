@@ -65,7 +65,7 @@ class ApiModel extends BaseModel {
     
     public function findCategory($id_category_api){
 
-        $query = "SELECT id, id_category_api FROM category WHERE id_category_api = :id_category_api";
+        $query = "SELECT id_category, id_category_api FROM category WHERE id_category_api = :id_category_api";
         $statement = $this->pdo->prepare($query);
         $statement->bindParam(':id_category_api', $id_category_api);
         $statement->execute();

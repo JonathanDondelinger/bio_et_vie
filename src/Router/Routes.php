@@ -68,11 +68,11 @@ class Routes {
             'path' => '/boContact'
         ],
 
-       /*  'api' => [
+        /* 'api' => [
             'controller' => 'ApiController',
             'function' => 'fetchApi',
             'path' => '/test'
-        ] */
+        ], */
 
         'readContact' => [
             'controller' => 'ReadContactController',

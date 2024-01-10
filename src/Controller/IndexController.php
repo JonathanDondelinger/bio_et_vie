@@ -53,23 +53,38 @@ class IndexController extends BaseController
             $professionals = $model->findProfessional($first, $professionalPerPage);
         }
 
-        $pageNumbers = array();
+        $pageNumbers = [
+            "pageMin" => null,
+            "pageBefore" => [],
+            "currentPage" => [],
+            "pageAfter" => [],
+            "pageMax" => []
+        ];
 
         if ($pageMin = $pages - $pages + 1) {
-            $pageNumbers[] = $pageMin;
+            // Vérifiez si $pageMin est égal à $currentPage, et si oui, définissez $pageNumbers["pageMin"] à null
+            $pageNumbers["pageMin"] = ($pageMin == $currentPage) ? null : $pageMin;
         }
 
-        for ($page = 2; $page <= $pages - 1; $page++) {
+        $pageNumbers["currentPage"] = $currentPage;
 
-            if ($page >= $currentPage - 6 && $page <= $currentPage + 6) {
-                $pageNumbers[] = $page;
+        if ($pageMax = $pages) {
+            // Vérifiez si $pageMax est égal à $currentPage, et si oui, définissez $pageNumbers["pageMax"] à null
+            $pageNumbers["pageMax"] = ($pageMax == $currentPage) ? null : $pageMax;
+        }
+
+        for ($page = $currentPage - 3; $page < $currentPage ; $page++) {
+            if ($page >= $pageMin +1 && $page <= $pageMax) {
+                $pageNumbers["pageBefore"][] = $page;
             }
         }
 
-        if ($pageMax = $pages) {
-            $pageNumbers[] = $pageMax;
-        };
-
+        for ($page = $currentPage + 1; $page < $currentPage +4 ; $page++) {
+            if ($page >= $pageMin && $page <= $pageMax -1) {
+                $pageNumbers["pageAfter"][] = $page;
+            }
+        }
+        
         if ($currentPage > $pageMin) {
             $previous = $currentPage - 1;
         } else {
@@ -96,20 +111,19 @@ class IndexController extends BaseController
             $professional['logo'] = $logo;
         }
 
-
-        
-
+        echo '<pre>';
+        var_dump($pageNumbers);
+        echo '</pre>';
 
         echo $this->mustache->render('index', [
             'professionals' => $professionals,
             'categorie' => $categoryId,
             'pages' => $pages,
-            'currentPage' => $currentPage,
             'pageNumbers' => $pageNumbers,
             'previous' => $previous,
             'next' => $next,
             'nbProfessional' => $nbProfessional,
             
-        ]);
+        ], $pageNumbers);
     }
 }

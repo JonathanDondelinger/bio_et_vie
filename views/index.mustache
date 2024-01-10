@@ -110,14 +110,37 @@
             <a href="/?page={{previous}}&categorie={{categorie}}#Professionnels"><i class="fa-solid fa-chevron-left" style="color: #000000;"></i></a>
         </li>
         {{#pageNumbers}}
-        <li>
-            <a href="/?page={{.}}&categorie={{categorie}}#Professionnels">{{.}}</a>
-        </li>
+            {{#pageMin}}
+                <li>
+                    <a href="/?page={{.}}&categorie={{categorie}}#Professionnels">{{.}}</a>
+                <li>
+            {{/pageMin}}
+            {{#pageBefore}}
+                <li>
+                    <a href="/?page={{.}}&categorie={{categorie}}#Professionnels">{{.}}</a>
+                </li>
+            {{/pageBefore}}
+            {{#currentPage}}
+                <li>
+                    <a href="/?page={{.}}&categorie={{categorie}}#Professionnels" class="courant">{{.}}</a>
+                </li>
+            {{/currentPage}}
+            {{#pageAfter}}
+                <li>
+                    <a href="/?page={{.}}&categorie={{categorie}}#Professionnels">{{.}}</a>
+                </li>
+            {{/pageAfter}}
+            {{#pageMax}}
+                <li>
+                    <a href="/?page={{.}}&categorie={{categorie}}#Professionnels">{{.}}</a>
+                <li>
+            {{/pageMax}}
         {{/pageNumbers}}
         <li>
             <a href="/?page={{next}}&categorie={{categorie}}#Professionnels"><i class="fa-solid fa-chevron-right" style="color: #000000;"></i></a>
         </li>
     </ul>
 </div>
+
 </section>
     {{>footer}}

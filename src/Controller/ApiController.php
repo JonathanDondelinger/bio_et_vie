@@ -35,7 +35,7 @@ class ApiController extends BaseController
         $successfulApiCalls = 0;
 
 
-        for ($debut = 0; $debut < $calls * $nb; $debut += $nb) {
+        for ($debut = 4700; $debut < $calls * $nb; $debut += $nb) {
 
             // Construction de l'URL avec les paramètres concaténer
             $url = $baseUrl . '?debut=' . $debut . '&nb=' . $nb;
@@ -94,7 +94,7 @@ class ApiController extends BaseController
                         $nom = $activite->nom;
                         $activity_id = $model->addActivity($id_activity_api, $nom);
                     } else {
-                        $activity_id = $activity['id'];
+                        $activity_id = $activity['id_activity'];
                     }
                     // table de jointure activity
                     $model->proActivity($professional_id, $activity_id);
@@ -109,7 +109,7 @@ class ApiController extends BaseController
                         $nom = $categorie->nom;
                         $category_id = $model->addCategory($id_api, $nom);
                     } else {
-                        $category_id = $category['id'];
+                        $category_id = $category['id_category'];
                     }
                     // table de jointure category
                     $model->proCategory($professional_id, $category_id);

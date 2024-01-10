@@ -291,7 +291,10 @@ section {
   list-style-type: none;
   padding-top: 20px;
 }
-.pagination ul a {
+.pagination ul li .courant {
+  color: #4acab3;
+}
+.pagination ul li a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   color: black;
